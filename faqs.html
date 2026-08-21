@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Montana Pay | Digital Savings</title>
+    
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"/>
+
+      <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Existing stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container">
+
+            <!-- Logo -->
+            <a href="#" class="logo">
+            Montana<span>Pay</span>
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+            aria-controls="navbarMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <nav class="main-nav">
+
+                    <!-- Products -->
+                    <div class="dropdown">
+                        <button
+                            class="nav-btn dropdown-toggle"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Products
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="save.html">Savings</a></li>
+
+                            <li><a class="dropdown-item" href="agent.html">Become an Agent</a></li>
+
+                            <li><a class="dropdown-item" href="send.html">Send Money</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Company -->
+                    <a href="#" class="nav-link">Company</a>
+
+                    <!-- Help -->
+                    <div class="dropdown">
+                        <button
+                            class="nav-btn dropdown-toggle"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Help
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+
+                            <li><a class="dropdown-item" href="faqs.html">FAQs</a></li>
+
+                            <li><a class="dropdown-item" href="security.html">Security</a></li>
+                        </ul>
+                    </div>
+
+                </nav> 
+ 
+                <!-- Authentication Buttons -->
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn login-btn">Login</a>
+                    <a href="register.html" class="btn create-account-btn">Create Account</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    
+     <!-- FAQ HERO SECTION -->
+    <section class="faq-hero">
+        <div class="container">
+
+            <div class="faq-hero-content">
+
+                <span class="faq-hero-label">
+                    HELP & SUPPORT
+                </span>
+
+                <h1>
+                    Frequently Asked
+                    <span>Questions.</span>
+                </h1>
+
+                <p>
+                    Find answers to common questions about your Montana PayApp
+                    account, savings, payments, agent services, and more.
+                </p>
+
+                <div class="faq-search">
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="search"
+                        id="faqSearch"
+                        placeholder="Search for a question..."
+                    >
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+   
+     <!-- FAQ ACCORDION -->
+    <section class="faq-section">
+        <div class="container">
+
+            <!-- GETTING STARTED -->
+            <div class="faq-category">
+
+                <h2 class="faq-category-title">
+                    Getting Started
+                </h2>
+
+                <div class="accordion" id="gettingStartedFaq">
+
+                    <!-- Question 1 -->
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqGettingStarted1"
+                                aria-expanded="true"
+                                aria-controls="faqGettingStarted1">
+                                How do I create a Montana PayApp account?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="faqGettingStarted1"
+                            class="accordion-collapse collapse show"
+                            data-bs-parent="#gettingStartedFaq">
+
+                            <div class="accordion-body">
+                                You can create your Montana PayApp account by
+                                selecting the registration option and following
+                                the steps provided to set up your account.
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Question 2 -->
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqGettingStarted2"
+                                aria-expanded="false"
+                                aria-controls="faqGettingStarted2">
+                                What do I need to register?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="faqGettingStarted2"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#gettingStartedFaq">
+
+                            <div class="accordion-body">
+                                Registration requirements will be provided during
+                                the account setup process. You may be asked to
+                                provide basic personal information and complete
+                                identity verification where required.
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Question 3 -->
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqGettingStarted3"
+                                aria-expanded="false"
+                                aria-controls="faqGettingStarted3">
+                                Can I access Montana PayApp from my phone?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="faqGettingStarted3"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#gettingStartedFaq">
+
+                            <div class="accordion-body">
+                                Montana PayApp is designed to provide a convenient
+                                digital experience across supported devices.
+                                Availability may depend on the platform and
+                                services being offered at launch.
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- SAVINGS -->
+            <div class="faq-category">
+
+                <h2 class="faq-category-title">
+                    Savings
+                </h2>
+
+                <div class="accordion" id="savingsFaq">
+
+                    <!-- Question 1 -->
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqSavings1"
+                                aria-expanded="false"
+                                aria-controls="faqSavings1">
+                                How can I start saving with Montana PayApp?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="faqSavings1"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#savingsFaq">
+
+                            <div class="accordion-body">
+                                Once your account is set up, you can access the
+                                savings feature and follow the available options
+                                to begin making contributions.
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Question 2 -->
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqSavings2"
+                                aria-expanded="false"
+                                aria-controls="faqSavings2">
+                                How do my savings contributions work?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="faqSavings2"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#savingsFaq">
+
+                            <div class="accordion-body">
+                                Montana PayApp allows users to build their savings
+                                through the available contribution options within
+                                the platform. Your account will show your savings
+                                activity and balance.
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Question 3 -->
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqSavings3"
+                                aria-expanded="false"
+                                aria-controls="faqSavings3">
+                                Can I withdraw my savings?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="faqSavings3"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#savingsFaq">
+
+                            <div class="accordion-body">
+                                Withdrawal availability and applicable conditions
+                                depend on the specific savings plan you choose.
+                                Details will be provided within the relevant
+                                savings product.
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- PAYMENTS -->
+            <div class="faq-category">
+
+                <h2 class="faq-category-title">
+                    Payments & Transfers
+                </h2>
+
+                <div class="accordion" id="paymentsFaq">
+
+                    <!-- Question 1 -->
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqPayments1"
+                                aria-expanded="false"
+                                aria-controls="faqPayments1">
+                                How do I make a payment?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="faqPayments1"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#paymentsFaq">
+
+                            <div class="accordion-body">
+                                Once payment services are available on your
+                                account, you can initiate payments through the
+                                payment options provided within Montana PayApp.
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Question 2 -->
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqPayments2"
+                                aria-expanded="false"
+                                aria-controls="faqPayments2">
+                                What should I do if my payment fails?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="faqPayments2"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#paymentsFaq">
+
+                            <div class="accordion-body">
+                                Check your transaction details and account balance
+                                first. If the issue continues or your account was
+                                debited without the payment being completed,
+                                contact Montana PayApp support for assistance.
+                            </div>
+
+                        </div>
+
+
+                    <!-- Question 3 -->
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqPayments3"
+                                aria-expanded="false"
+                                aria-controls="faqPayments3">
+                                Can I send money to another person?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="faqPayments3"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#paymentsFaq">
+
+                            <div class="accordion-body">
+                                Montana PayApp is being designed to support payment
+                                and money transfer services. Availability of
+                                specific transfer features will depend on the
+                                services available on your account.
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- AGENT SERVICES -->
+            <div class="faq-category">
+
+                <h2 class="faq-category-title">
+                    Agent Services
+                </h2>
+
+                <div class="accordion" id="agentFaq">
+
+                    <!-- Question 1 -->
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqAgent1"
+                                aria-expanded="false"
+                                aria-controls="faqAgent1">
+                                How can I become a Montana PayApp agent?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="faqAgent1"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#agentFaq">
+
+                            <div class="accordion-body">
+                                Users interested in becoming agents can follow
+                                the agent registration process provided by
+                                Montana PayApp and complete any required
+                                verification.
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Question 2 -->
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqAgent2"
+                                aria-expanded="false"
+                                aria-controls="faqAgent2">
+                                What can a Montana PayApp agent do?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="faqAgent2"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#agentFaq">
+
+                            <div class="accordion-body">
+                                Agents can support customers with available
+                                Montana PayApp services, including assisting with
+                                savings and daily contribution activities where
+                                those services are enabled.
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+
+            <!-- SECURITY -->
+            <div class="faq-category">
+
+                <h2 class="faq-category-title">
+                    Account & Security
+                </h2>
+
+                <div class="accordion" id="securityFaq">
+
+                    <!-- Question 1 -->
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqSecurity1"
+                                aria-expanded="false"
+                                aria-controls="faqSecurity1">
+                                How do I keep my Montana PayApp account secure?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="faqSecurity1"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#securityFaq">
+
+                            <div class="accordion-body">
+                                Keep your login details, PINs and verification
+                                information private. Never share sensitive account
+                                information with anyone and always use the
+                                official Montana PayApp platform.
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Question 2 -->
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqSecurity2"
+                                aria-expanded="false"
+                                aria-controls="faqSecurity2">
+                                What should I do if I suspect suspicious activity?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="faqSecurity2"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#securityFaq">
+
+                            <div class="accordion-body">
+                                Contact Montana PayApp support as soon as possible
+                                and provide details of the suspicious activity.
+                                Do not share your PIN, password or verification
+                                codes with anyone.
+                            </div>
+
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="logo">
+                        Montana<span>Pay</span>
+                    </div>
+
+                    <h6>Save Today <br>Build Tomorrow</h6>
+
+                    <p class="footer-text">
+                        Secure Digital Savings • Daily Contributions • Future Financial Services
+                    </p>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+
+                    <h5>Products</h5>
+
+                    <ul class="footer-links">
+                        <li><a href="#">Become an Agent</a></li>
+                        <li><a href="#">Save</a></li>
+                        <li><a href="#">Loan</a></li>
+                        <li><a href="#">Investify</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+
+                    <h5>Company</h5>
+
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Report an Issue</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+
+                    <h5>Legal</h5>
+
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Licenses</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="copyright">
+                © 2026 MontanaPay. All Rights Reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous" >
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous">
+    </script>
+  </body>
+</html>
