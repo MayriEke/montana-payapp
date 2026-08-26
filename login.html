@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +23,10 @@
     <!-- Existing stylesheet -->
     <link rel="stylesheet" href="style.css" />
 </head>
+
+
 <body>
+
     <!-- Navigation -->
     <header class="site-header">
         <div class="container">
@@ -103,108 +107,166 @@
         </div>
     </header>
 
-    <section class="register-page">
-        <div class="register-brand">
+
+    <!-- Login Section -->  
+    <section class="login-page">
+
+        <!-- Left Branding -->
+        <div class="login-brand">
 
             <div class="app-content">
-                <h1>Welcome to <br> <a href="index.html" class="app-logo">
-                    <img src="images/logo.png" alt="payapp logo"></a> app
-                </h1>
-                <p>Create your account in seconds.</p>
-            </div> 
+
+                <h1>Welcome Back</h1>
+
+                <p>
+                    Log in to manage your savings, payments and account.
+                </p>
+
+            </div>
+
         </div>
 
-        <!-- Form section -->
-         <div class="register-form">
-            <div class="register-form-container">
+
+        <!-- Login Form -->
+        <div class="login-form">
+
+            <div class="login-form-container">
 
                 <div class="form-header">
-                    <h4>Create Account</h4>
+                    <h2>Login to your account</h2>
                 </div>
 
-                <form id="registerForm">
+
+                <form>
+
                     <div class="row g-3">
-                        <div class="col-md-6"> 
-                            <label for="firstName" class="form-label">First Name</label>
 
-                            <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required>
-                        </div>
-
-                        <div class="col-md-6"> 
-                            <label for="lastName" class="form-label">Last Name</label>
-
-                            <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required>
-                        </div>
-                        
-
+                        <!-- Email or Phone -->
                         <div class="col-12">
-                            <label for="email" class="form-label">Email Address</label>
 
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
+                            <label
+                                for="emailPhone"
+                                class="form-label">
+
+                                Email Address or Phone Number
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="emailPhone"
+                                placeholder="Enter your email or phone number"
+                                required
+                            >
+
                         </div>
 
+
+                        <!-- Password -->
                         <div class="col-12">
-                            <label for="phone" class="form-label">Phone Number</label>
 
-                            <input type="phone" class="form-control" id="phone" placeholder="Enter your phone number" required>
-                        </div>
+                            <div class="password-label">
 
-                        <div class="col-12">
-                            <label for="password" class="form-label">Password</label>
-                            <div class="password-wrapper">
-                                <input type="password" class="form-control" id="password" placeholder="create password" required>
+                                <label
+                                    for="loginPassword"
+                                    class="form-label">
 
-                                <button type="button" class="password-toggle" aria-label="Show password">
-                                    <i class="bi bi-eye"></i>
-                                </button>
+                                    Password
+
+                                </label>
+
+                                <a href="#" class="forgot-password">
+                                    Forgot Password?
+                                </a>
+
                             </div>
-                        </div>
 
-                        <div class="col-12">
-                            <label for="confirmPassword" class="form-label">Confirm Password</label>
 
                             <div class="password-wrapper">
-                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
 
-                                <button type="button" class="password-toggle" aria-label="Show password">
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="loginPassword"
+                                    placeholder="Enter your password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    aria-label="Show password">
+
                                     <i class="bi bi-eye"></i>
+
                                 </button>
+
                             </div>
+
                         </div>
 
+
+                        <!-- Remember Me -->
                         <div class="col-12">
 
                             <div class="form-check terms-check">
 
-                                <input class="form-check-input" type="checkbox" id="terms" required>
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="remember"
+                                >
 
-                                <label class="form-check-label" for="terms"> I agree to the
-                                    <a href="#">Terms of Service</a> 
-                                    and 
-                                    <a href="#">Privacy Policy</a>
+                                <label
+                                    class="form-check-label"
+                                    for="remember">
+
+                                    Remember me
+
                                 </label>
+
                             </div>
+
                         </div>
 
+
+                        <!-- Login Button -->
                         <div class="col-12">
 
-                            <button type="submit" class="btn register-btn w-100">
-                                Create Account
+                            <button
+                                type="submit"
+                                class="btn register-btn w-100">
+
+                                Login
+
                             </button>
+
                         </div>
+
                     </div>
+
                 </form>
 
+
                 <p class="login-link">
-                    Already have an account?
-                    <a href="login.html">Login</a>
+
+                    Don't have an account?
+
+                    <a href="register.html">
+                        Create Account
+                    </a>
+
                 </p>
+
             </div>
-         </div>
+
+        </div>
+
     </section>
 
 
-
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
 
@@ -282,6 +344,7 @@
       integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
       crossorigin="anonymous">
     </script>
-    
+
 </body>
+
 </html>
