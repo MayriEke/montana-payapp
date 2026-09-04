@@ -1,660 +1,741 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register | MontanaPayapp</title>
 
-     <!-- Google font -->
+    <!-- Google font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"/>
+      rel="stylesheet"
+    />
 
-      <!-- Bootstrap -->
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"/>
+      crossorigin="anonymous"
+    />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
     <!-- Existing stylesheet -->
     <link rel="stylesheet" href="../style.css" />
 
     <!-- Customer dashboard stylesheet -->
     <link rel="stylesheet" href="../css/customer-dash.css" />
-</head>
+  </head>
 
-
-<body>
-
+  <body>
     <div class="customer-dashboard">
-        <aside class="dashboard-sidebar" id="dashboardSidebar" aria-label="customer dashboard navigation">
+      <aside
+        class="dashboard-sidebar"
+        id="dashboardSidebar"
+        aria-label="customer dashboard navigation"
+      >
+        <div class="sidebar-brand">
+          <a href="../index.html" class="dashboard-logo"
+            >Montana <span>Pay</span></a
+          >
+        </div>
 
-            <div class="sidebar-brand">
-                <a href="../index.html" class="dashboard-logo">Montana <span>Pay</span></a>
+        <nav class="sidebar-nav">
+          <p class="nav-label">MAIN MENU</p>
+
+          <a
+            href="dashboard.html"
+            class="sidebar-link active"
+            data-page="dashboard"
+          >
+            <i class="bi bi-grid-1x2"></i>
+            <span>Dashboard</span>
+          </a>
+
+          <a href="savings.html" class="sidebar-link" data-page="savings">
+            <i class="bi bi-piggy-bank"></i>
+            <span>Save</span>
+          </a>
+
+          <a href="contribution.html" class="sidebar-link" data-page="savings">
+            <i class="bi bi-cash-stack"></i>
+            <span>Contribution</span>
+          </a>
+
+          <p class="nav-label">ACCOUNT</p>
+
+          <a href="profile.html" class="sidebar-link" data-page="profile">
+            <i class="bi bi-person"></i>
+            <span>Profile</span>
+          </a>
+
+          <a href="settings.html" class="sidebar-link" data-page="settings">
+            <i class="bi bi-gear"></i>
+            <span>Settings</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <a href="#" class="sidebar-link logout-link" id="logoutButton">
+            <i class="bi bi-box-arrow-left"></i>
+            <span>Log out</span>
+          </a>
+        </div>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="dashboard-header">
+          <!-- Mobile Menu Button -->
+          <button
+            type="button"
+            class="sidebar-toggle"
+            id="sidebarToggle"
+            aria-label="Open navigation menu"
+          >
+            <i class="bi bi-list"></i>
+          </button>
+
+          <div class="header-welcome">
+            <p>Welcome back,</p>
+            <h1 id="customerName">Customer</h1>
+          </div>
+
+          <div class="header-actions">
+            <!-- Notification -->
+            <button
+              type="button"
+              class="header-icon-btn notification-btn"
+              id="notificationButton"
+              aria-label="Notifications"
+            >
+              <i class="bi bi-bell"></i>
+
+              <span class="notification-count" id="notificationCount"> 0 </span>
+            </button>
+
+            <!-- Customer Profile -->
+            <button
+              type="button"
+              class="customer-profile-btn"
+              id="profileMenuButton"
+              aria-label="Open profile menu"
+            >
+              <div class="profile-avatar" id="customerAvatar">C</div>
+
+              <div class="profile-info">
+                <span id="customerFullName">Customer</span>
+                <small>Personal Account</small>
+              </div>
+
+              <i class="bi bi-chevron-down"></i>
+            </button>
+          </div>
+        </header>
+
+        <!-- DASHBOARD CONTENT -->
+        <div class="dashboard-content">
+          <section class="account-summary-section">
+            <div class="section-heading">
+              <div>
+                <p class="section-eyebrow">ACCOUNT OVERVIEW</p>
+
+                <h2>Your financial summary</h2>
+              </div>
             </div>
 
-            <nav class="sidebar-nav">
-                <p class="nav-label">MAIN MENU</p>
+            <!-- Balance Cards -->
+            <div class="row g-4">
+              <!-- Total Balance -->
+              <div class="col-xl-8">
+                <div class="balance-card primary-balance-card">
+                  <div class="balance-card-header">
+                    <div>
+                      <p>Total Balance</p>
 
-                <a href="dashboard.html" class="sidebar-link active" data-page="dashboard">
-                    <i class="bi bi-grid-1x2"></i>
-                    <span>Dashboard</span>
-                </a>
+                      <h2 id="totalBalance" data-balance-type="total">₦0.00</h2>
+                    </div>
 
-                <a href="savings.html" class="sidebar-link" data-page="savings">
-                    <i class="bi bi-piggy-bank"></i>
-                    <span>Save</span>
-                </a>
+                    <div class="balance-card-action">
+                      <button
+                        type="button"
+                        class="balance-visibility-btn"
+                        id="totalBalanceVisibilityButton"
+                        aria-label="Hide total balance"
+                      >
+                        <i
+                          class="bi bi-eye"
+                          id="totalBalanceVisibilityIcon"
+                        ></i>
+                      </button>
 
-                <a href="contribution.html" class="sidebar-link" data-page="savings">
-                    <i class="bi bi-cash-stack"></i>
-                    <span>Contribution</span>
-                </a>
+                      <div class="balance-card-icon">
+                        <i class="bi bi-wallet2"></i>
+                      </div>
+                    </div>
+                  </div>
 
-                <p class="nav-label">ACCOUNT</p>
+                  <div class="balance-card-footer">
+                    <button
+                      type="button"
+                      class="add-money-btn"
+                      id="addMoneyButton"
+                      data-action="add-money"
+                    >
+                      <i class="bi bi-plus-lg"></i>
+                      Add Money
+                    </button>
+                  </div>
+                </div>
+              </div>
 
-                <a href="profile.html"  class="sidebar-link" data-page="profile">
-                    <i class="bi bi-person"></i>
-                    <span>Profile</span>
-                </a>
+              <!-- Savings Balance -->
+              <div class="col-xl-4">
+                <div class="balance-card savings-balance-card">
+                  <div class="balance-card-header">
+                    <div>
+                      <p>Total Savings</p>
 
-                <a href="settings.html" class="sidebar-link" data-page="settings">
-                    <i class="bi bi-gear"></i>
-                    <span>Settings</span>
-                </a>
-            </nav>
+                      <h2 id="totalSavings" data-balance-type="savings">
+                        ₦0.00
+                      </h2>
+                    </div>
 
-            <div class="sidebar-footer">
-                <a href="#" class="sidebar-link logout-link" id="logoutButton">
-                    <i class="bi bi-box-arrow-left"></i>
-                    <span>Log out</span>
-                </a>
+                    <div class="balance-card-action">
+                      <!-- Balance Visibility Toggle -->
+                      <button
+                        type="button"
+                        class="balance-visibility-btn"
+                        id="totalSavingsVisibilityButton"
+                        aria-label="Hide total savings"
+                      >
+                        <i
+                          class="bi bi-eye"
+                          id="totalSavingsVisibilityIcon"
+                        ></i>
+                      </button>
+
+                      <div class="balance-card-icon">
+                        <i class="bi bi-piggy-bank"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="savings-card-footer">
+                    <span>
+                      <i class="bi bi-arrow-up-right"></i>
+                      <strong id="savingsGrowth">0%</strong>
+                      this month
+                    </span>
+
+                    <a href="savings.html"> View savings </a>
+                  </div>
+                </div>
+              </div>
             </div>
-        </aside>
+          </section>
 
-        <main class="dashboard-main">
-            <header class="dashboard-header">
-                <!-- Mobile Menu Button -->
-                <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Open navigation menu">
-                    <i class="bi bi-list"></i>
-                </button>
+          <section class="quick-actions-section">
+            <div class="section-heading">
+              <div>
+                <p class="section-eyebrow">QUICK ACTIONS</p>
+                <h2>What would you like to do?</h2>
+              </div>
+            </div>
 
-                 <div class="header-welcome">
-                    <p>Welcome back,</p>
-                    <h1 id="customerName">Customer</h1>
-                </div>
+            <div class="quick-actions-grid">
+              <!-- Add Money -->
+              <button
+                type="button"
+                class="quick-action-btn"
+                id="quickAddMoney"
+                data-action="add-money"
+              >
+                <span class="quick-action-icon">
+                  <i class="bi bi-plus-circle"></i>
+                </span>
 
-                <div class="header-actions">
-                    <!-- Notification -->
-                    <button type="button" class="header-icon-btn notification-btn" id="notificationButton" aria-label="Notifications">
-                        <i class="bi bi-bell"></i>
+                <span class="quick-action-text">
+                  <strong>Add Money</strong>
+                  <small>Fund your account</small>
+                </span>
+              </button>
 
-                        <span class="notification-count" id="notificationCount">
-                            0
-                        </span>
-                    </button>
+              <!-- Withdraw -->
+              <button
+                type="button"
+                class="quick-action-btn"
+                id="withdrawButton"
+                data-action="withdraw"
+              >
+                <span class="quick-action-icon">
+                  <i class="bi bi-bank"></i>
+                </span>
 
-                    <!-- Customer Profile -->
-                    <button type="button" class="customer-profile-btn" id="profileMenuButton" aria-label="Open profile menu">
-                        <div class="profile-avatar" id="customerAvatar">
-                            C
-                        </div>
+                <span class="quick-action-text">
+                  <strong>Withdraw</strong>
+                  <small>Transfer to your bank</small>
+                </span>
+              </button>
 
-                        <div class="profile-info">
-                            <span id="customerFullName">Customer</span>
-                            <small>Personal Account</small>
-                        </div>
+              <!-- Save Money -->
+              <button
+                type="button"
+                class="quick-action-btn"
+                id="saveMoneyButton"
+                data-action="save-money"
+              >
+                <span class="quick-action-icon">
+                  <i class="bi bi-piggy-bank"></i>
+                </span>
 
-                        <i class="bi bi-chevron-down"></i>
-                    </button>
-                </div>
-            </header>
+                <span class="quick-action-text">
+                  <strong>Save</strong>
+                  <small>Grow your savings</small>
+                </span>
+              </button>
+            </div>
+          </section>
 
-            <!-- DASHBOARD CONTENT -->
-            <div class="dashboard-content">
-                <section class="account-summary-section">
+          <section class="savings-overview-section">
+            <div class="section-heading">
+              <div>
+                <p class="section-eyebrow">YOUR SAVINGS</p>
 
-                    <div class="section-heading">
-                        <div>
-                            <p class="section-eyebrow">
-                                ACCOUNT OVERVIEW
-                            </p>
+                <h2>Keep growing your money</h2>
+              </div>
 
-                            <h2>Your financial summary</h2>
-                        </div>
+              <a href="savings.html" class="view-all-link">
+                View all
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
 
-                        <button
-                            type="button"
-                            class="balance-visibility-btn"
-                            id="balanceVisibilityButton"
-                            aria-label="Hide balance"
-                        >
-                            <i
-                                class="bi bi-eye"
-                                id="balanceVisibilityIcon"
-                            ></i>
-                        </button>
+            <div class="row g-4">
+              <!-- Active Savings -->
+              <div class="col-lg-6">
+                <article
+                  class="savings-overview-card"
+                  data-savings-id="main-savings"
+                >
+                  <div class="savings-overview-header">
+                    <div class="savings-plan-info">
+                      <div class="savings-plan-icon">
+                        <i class="bi bi-piggy-bank"></i>
+                      </div>
+
+                      <div>
+                        <p>Main Savings</p>
+
+                        <h3 id="mainSavingsBalance">₦0.00</h3>
+                      </div>
                     </div>
 
+                    <span class="status-badge active-status"> Active </span>
+                  </div>
 
-                    <!-- Balance Cards -->
-                    <div class="row g-4">
+                  <div class="savings-progress">
+                    <div class="progress-info">
+                      <span>Monthly progress</span>
 
-
-                        <!-- Total Balance -->
-                        <div class="col-xl-8">
-
-                            <div class="balance-card primary-balance-card">
-
-                                <div class="balance-card-header">
-
-                                    <div>
-                                        <p>Total Balance</p>
-
-                                        <h2
-                                            id="totalBalance"
-                                            data-balance-type="total"
-                                        >
-                                            ₦550,000.00
-                                        </h2>
-                                    </div>
-
-
-                                    <div class="balance-card-icon">
-                                        <i class="bi bi-wallet2"></i>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="balance-card-footer">
-
-                                    <div class="balance-meta">
-                                        <span>Available balance</span>
-
-                                        <strong
-                                            id="availableBalance"
-                                            data-balance-type="available"
-                                        >
-                                            ₦550,000.00
-                                        </strong>
-                                    </div>
-
-
-                                    <button
-                                        type="button"
-                                        class="add-money-btn"
-                                        id="addMoneyButton"
-                                        data-action="add-money"
-                                    >
-                                        <i class="bi bi-plus-lg"></i>
-                                        Add Money
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- Savings Balance -->
-                        <div class="col-xl-4">
-
-                            <div class="balance-card savings-balance-card">
-
-                                <div class="balance-card-header">
-
-                                    <div>
-                                        <p>Total Savings</p>
-
-                                        <h2
-                                            id="totalSavings"
-                                            data-balance-type="savings"
-                                        >
-                                            ₦00.00
-                                        </h2>
-                                    </div>
-
-
-                                    <div class="balance-card-icon">
-                                        <i class="bi bi-piggy-bank"></i>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="savings-card-footer">
-
-                                    <span>
-                                        <i class="bi bi-arrow-up-right"></i>
-                                        <strong id="savingsGrowth">0%</strong>
-                                        this month
-                                    </span>
-
-                                    <a href="savings.html">
-                                        View savings
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
+                      <strong id="mainSavingsProgress"> 0% </strong>
                     </div>
-
-                </section>
-
-                <section class="quick-actions-section">
-
-                    <div class="section-heading">
-                        <div>
-                            <p class="section-eyebrow">QUICK ACTIONS</p>
-                            <h2>What would you like to do?</h2>
-                        </div>
-                    </div>
-
-
-                    <div class="quick-actions-grid">
-
-
-                        <!-- Add Money -->
-                        <button
-                            type="button"
-                            class="quick-action-btn"
-                            id="quickAddMoney"
-                            data-action="add-money"
-                        >
-                            <span class="quick-action-icon">
-                                <i class="bi bi-plus-circle"></i>
-                            </span>
-
-                            <span class="quick-action-text">
-                                <strong>Add Funds</strong>
-                                <small>Fund your account</small>
-                            </span>
-                        </button>
-
-
-                        <!-- Withdraw -->
-                        <button
-                            type="button"
-                            class="quick-action-btn"
-                            id="withdrawButton"
-                            data-action="withdraw"
-                        >
-                            <span class="quick-action-icon">
-                                <i class="bi bi-bank"></i>
-                            </span>
-
-                            <span class="quick-action-text">
-                                <strong>Withdraw</strong>
-                                <small>Transfer to your bank</small>
-                            </span>
-                        </button>
-
-
-
-                        <!-- Save Money -->
-                        <button
-                            type="button"
-                            class="quick-action-btn"
-                            id="saveMoneyButton"
-                            data-action="save-money"
-                        >
-                            <span class="quick-action-icon">
-                                <i class="bi bi-piggy-bank"></i>
-                            </span>
-
-                            <span class="quick-action-text">
-                                <strong>Save Money</strong>
-                                <small>Grow your savings</small>
-                            </span>
-                        </button>
-
-
-                    </div>
-
-                </section>
-
-                <section class="savings-overview-section">
-
-                    <div class="section-heading">
-
-                        <div>
-                            <p class="section-eyebrow">
-                                YOUR SAVINGS
-                            </p>
-
-                            <h2>Keep growing your money</h2>
-                        </div>
-
-
-                        <a
-                            href="savings.html"
-                            class="view-all-link"
-                        >
-                            View all
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-
-                    <div class="row g-4">
-
-
-                        <!-- Active Savings -->
-                        <div class="col-lg-6">
-
-                            <article
-                                class="savings-overview-card"
-                                data-savings-id="main-savings"
-                            >
-
-                                <div class="savings-overview-header">
-
-                                    <div class="savings-plan-info">
-
-                                        <div class="savings-plan-icon">
-                                            <i class="bi bi-piggy-bank"></i>
-                                        </div>
-
-
-                                        <div>
-                                            <p>Main Savings</p>
-
-                                            <h3
-                                                id="mainSavingsBalance"
-                                            >
-                                                ₦0.00
-                                            </h3>
-                                        </div>
-
-                                    </div>
-
-
-                                    <span
-                                        class="status-badge active-status"
-                                    >
-                                        Active
-                                    </span>
-
-                                </div>
-
-
-                                <div class="savings-progress">
-
-                                    <div class="progress-info">
-                                        <span>Monthly progress</span>
-
-                                        <strong
-                                            id="mainSavingsProgress"
-                                        >
-                                            0%
-                                        </strong>
-                                    </div>
-
-
-                                    <div
-                                        class="progress"
-                                        role="progressbar"
-                                        aria-label="Savings progress"
-                                    >
-                                        <div
-                                            class="progress-bar"
-                                            id="mainSavingsProgressBar"
-                                            style="width: 0%;"
-                                        ></div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="savings-overview-footer">
-
-                                    <span>
-                                        Next contribution
-                                    </span>
-
-                                    <strong
-                                        id="nextContributionAmount"
-                                    >
-                                        ₦0.00
-                                    </strong>
-
-                                </div>
-
-                            </article>
-
-                        </div>
-
-
-
-                        <!-- Automated Savings -->
-                        <div class="col-lg-6">
-
-                            <article class="savings-overview-card automated-savings-card" id="automatedSavingsCard" data-savings-id="automated-savings">
-
-                                <div class="savings-overview-header">
-
-                                    <div class="savings-plan-info">
-
-                                        <div class="savings-plan-icon">
-                                            <i class="bi bi-arrow-repeat"></i>
-                                        </div>
-
-
-                                        <div>
-                                            <p>Automated Savings</p>
-
-                                            <h3
-                                                id="automatedSavingsBalance"
-                                            >
-                                                ₦0.00
-                                            </h3>
-                                        </div>
-
-                                    </div>
-
-
-                                    <span
-                                        class="status-badge inactive-status"
-                                        id="automatedSavingsStatus"
-                                    >
-                                        Not Active
-                                    </span>
-
-                                </div>
-
-
-                                <div class="automated-savings-details">
-
-                                    <div class="automated-savings-item">
-
-                                        <span>Frequency</span>
-
-                                        <strong
-                                            id="automatedSavingsFrequency"
-                                        >
-                                            Not set
-                                        </strong>
-
-                                    </div>
-
-
-                                    <div class="automated-savings-item">
-
-                                        <span>Next debit</span>
-
-                                        <strong
-                                            id="nextAutomatedSavingsDate"
-                                        >
-                                            Not scheduled
-                                        </strong>
-
-                                    </div>
-
-                                </div>
-
-
-                                <button
-                                    type="button"
-                                    class="automated-savings-btn"
-                                    id="automatedSavingsButton"
-                                    data-action="setup-automated-savings"
-                                >
-                                    <i class="bi bi-gear"></i>
-
-                                    <span
-                                        id="automatedSavingsButtonText"
-                                    >
-                                        Set Up Automated Savings
-                                    </span>
-                                </button>
-
-                            </article>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section class="recent-activity-section">
-
-                    <div class="section-heading">
-
-                        <div>
-                            <p class="section-eyebrow">
-                                RECENT ACTIVITY
-                            </p>
-
-                            <h2>Latest transactions</h2>
-                        </div>
-
-
-                        <a
-                            href="transactions.html"
-                            class="view-all-link"
-                        >
-                            View all
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-
-                    </div>
-
 
                     <div
-                        class="transactions-list"
-                        id="recentTransactions"
+                      class="progress"
+                      role="progressbar"
+                      aria-label="Savings progress"
                     >
+                      <div
+                        class="progress-bar"
+                        id="mainSavingsProgressBar"
+                        style="width: 0%"
+                      ></div>
+                    </div>
+                  </div>
 
-                        <!--
+                  <div class="savings-overview-footer">
+                    <span> Next contribution </span>
+
+                    <strong id="nextContributionAmount"> ₦0.00 </strong>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Automated Savings -->
+              <div class="col-lg-6">
+                <article
+                  class="savings-overview-card automated-savings-card"
+                  id="automatedSavingsCard"
+                  data-savings-id="automated-savings"
+                >
+                  <div class="savings-overview-header">
+                    <div class="savings-plan-info">
+                      <div class="savings-plan-icon">
+                        <i class="bi bi-arrow-repeat"></i>
+                      </div>
+
+                      <div>
+                        <p>Automated Savings</p>
+
+                        <h3 id="automatedSavingsBalance">₦0.00</h3>
+                      </div>
+                    </div>
+
+                    <span
+                      class="status-badge inactive-status"
+                      id="automatedSavingsStatus"
+                    >
+                      Not Active
+                    </span>
+                  </div>
+
+                  <div class="automated-savings-details">
+                    <div class="automated-savings-item">
+                      <span>Frequency</span>
+
+                      <strong id="automatedSavingsFrequency"> Not set </strong>
+                    </div>
+
+                    <div class="automated-savings-item">
+                      <span>Next debit</span>
+
+                      <strong id="nextAutomatedSavingsDate">
+                        Not scheduled
+                      </strong>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="automated-savings-btn"
+                    id="automatedSavingsButton"
+                    data-action="setup-automated-savings"
+                  >
+                    <i class="bi bi-gear"></i>
+
+                    <span id="automatedSavingsButtonText">
+                      Set Up Automated Savings
+                    </span>
+                  </button>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section class="recent-activity-section">
+            <div class="section-heading">
+              <div>
+                <p class="section-eyebrow">RECENT ACTIVITY</p>
+
+                <h2>Latest transactions</h2>
+              </div>
+
+              <a href="transactions.html" class="view-all-link">
+                View all
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+
+            <div class="transactions-list" id="recentTransactions">
+              <!--
                             JavaScript can dynamically insert
                             transaction items here later.
                         -->
 
+              <!-- Empty State -->
+              <div class="empty-state" id="transactionsEmptyState">
+                <div class="empty-state-icon">
+                  <i class="bi bi-receipt"></i>
+                </div>
 
-                        <!-- Empty State -->
-                        <div
-                            class="empty-state"
-                            id="transactionsEmptyState"
-                        >
+                <h3>No transactions yet</h3>
 
-                            <div class="empty-state-icon">
-                                <i class="bi bi-receipt"></i>
-                            </div>
+                <p>Your recent transactions will appear here.</p>
+              </div>
+            </div>
+          </section>
 
-                            <h3>No transactions yet</h3>
-
-                            <p>
-                                Your recent transactions will appear here.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-
-                <!-- =================
+          <!-- =================
                      SAVINGS INSIGHT
                 ================== -->
-                <section
-                    class="savings-insight-section"
-                    id="savingsInsightSection"
+          <section class="savings-insight-section" id="savingsInsightSection">
+            <div class="savings-insight-card">
+              <div class="savings-insight-content">
+                <span class="insight-label"> SAVINGS INSIGHT </span>
+
+                <h2>Small savings can create big results.</h2>
+
+                <p>
+                  Set a savings target or automate your contributions and stay
+                  consistent with your financial goals.
+                </p>
+
+                <button
+                  type="button"
+                  class="primary-dashboard-btn"
+                  id="createSavingsGoalButton"
+                  data-action="create-savings-goal"
                 >
+                  Create a Savings Goal
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
 
-                    <div class="savings-insight-card">
-
-                        <div class="savings-insight-content">
-
-                            <span class="insight-label">
-                                SAVINGS INSIGHT
-                            </span>
-
-                            <h2>
-                                Small savings can create big results.
-                            </h2>
-
-                            <p>
-                                Set a savings target or automate your
-                                contributions and stay consistent with your
-                                financial goals.
-                            </p>
-
-                            <button
-                                type="button"
-                                class="primary-dashboard-btn"
-                                id="createSavingsGoalButton"
-                                data-action="create-savings-goal"
-                            >
-                                Create a Savings Goal
-                                <i class="bi bi-arrow-right"></i>
-                            </button>
-
-                        </div>
-
-
-                        <div class="savings-insight-icon">
-                            <i class="bi bi-graph-up-arrow"></i>
-                        </div>
-
-                    </div>
-
-                </section>
-            </div>      
-        </main>
+              <div class="savings-insight-icon">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
     </div>
 
+    <!-- =====================================================
+     ADD MONEY MODAL
+===================================================== -->
 
-    
+    <div class="add-money-modal-overlay" id="addMoneyModal" aria-hidden="true">
+      <div
+        class="add-money-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="addMoneyModalTitle"
+      >
+        <!-- HEADER -->
+
+        <div class="add-money-modal-header">
+          <button
+            type="button"
+            class="add-money-back-btn"
+            id="addMoneyBackButton"
+            aria-label="Go back"
+          >
+            <i class="bi bi-arrow-left"></i>
+          </button>
+
+          <h2 id="addMoneyModalTitle">Add Money</h2>
+
+          <button
+            type="button"
+            class="add-money-close-btn"
+            id="addMoneyCloseButton"
+            aria-label="Close"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <!-- =================================================
+             STEP 1 — ENTER AMOUNT
+        ================================================== -->
+
+        <div class="add-money-step active" id="addMoneyAmountStep">
+          <div class="add-money-step-content">
+            <p class="add-money-label">Enter Amount</p>
+
+            <p class="add-money-description">
+              How much would you like to add to your wallet?
+            </p>
+
+            <div class="amount-input-wrapper">
+              <span> ₦ </span>
+
+              <input
+                type="text"
+                id="addMoneyAmount"
+                inputmode="decimal"
+                placeholder="0.00"
+                autocomplete="off"
+              />
+            </div>
+
+            <p class="add-money-error" id="addMoneyAmountError"></p>
+
+            <button
+              type="button"
+              class="add-money-primary-btn"
+              id="addMoneyContinueButton"
+            >
+              Continue
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- =================================================
+             STEP 2 — PAYMENT METHOD
+        ================================================== -->
+
+        <div class="add-money-step" id="addMoneyPaymentStep">
+          <div class="add-money-step-content">
+            <p class="add-money-label">Choose Payment Method</p>
+
+            <p class="add-money-description">
+              How would you like to fund your wallet?
+            </p>
+
+            <!-- Selected amount -->
+
+            <div class="selected-add-money-amount">
+              <span> Amount </span>
+
+              <strong id="selectedAddMoneyAmount"> ₦0.00 </strong>
+            </div>
+
+            <!-- BANK TRANSFER -->
+
+            <button
+              type="button"
+              class="payment-method-btn"
+              id="bankTransferButton"
+            >
+              <span class="payment-method-icon bank-icon">
+                <i class="bi bi-bank"></i>
+              </span>
+
+              <span class="payment-method-info">
+                <strong> Bank Transfer </strong>
+
+                <small> Transfer from your bank account </small>
+              </span>
+
+              <i class="bi bi-chevron-right payment-method-arrow"></i>
+            </button>
+
+            <!-- CARD TRANSFER -->
+
+            <button
+              type="button"
+              class="payment-method-btn"
+              id="cardTransferButton"
+            >
+              <span class="payment-method-icon card-icon">
+                <i class="bi bi-credit-card"></i>
+              </span>
+
+              <span class="payment-method-info">
+                <strong> Card Transfer </strong>
+
+                <small> Pay using your debit or credit card </small>
+              </span>
+
+              <i class="bi bi-chevron-right payment-method-arrow"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- =================================================
+             STEP 3 — BANK TRANSFER
+        ================================================== -->
+
+        <div class="add-money-step" id="addMoneyBankStep">
+          <div class="add-money-step-content">
+            <p class="add-money-label">Bank Transfer</p>
+
+            <p class="add-money-description">
+              Transfer the exact amount to the account below.
+            </p>
+
+            <div class="bank-transfer-amount">
+              <span> Transfer Amount </span>
+
+              <strong id="bankTransferAmount"> ₦0.00 </strong>
+            </div>
+
+            <div class="bank-details-card">
+              <div class="bank-detail-row">
+                <span> Bank Name </span>
+
+                <strong> Providus Bank </strong>
+              </div>
+
+              <div class="bank-detail-row">
+                <span> Account Number </span>
+
+                <strong> 1234567890 </strong>
+              </div>
+
+              <div class="bank-detail-row">
+                <span> Account Name </span>
+
+                <strong> MontanaPayapp Test </strong>
+              </div>
+            </div>
+
+            <div class="bank-transfer-notice">
+              <i class="bi bi-info-circle"></i>
+
+              <span>
+                This is currently a test payment flow. Real payment confirmation
+                will later be handled by the backend.
+              </span>
+            </div>
+
+            <button
+              type="button"
+              class="add-money-primary-btn"
+              id="bankTransferMadeButton"
+            >
+              I Have Made the Transfer
+            </button>
+          </div>
+        </div>
+
+        <!-- =================================================
+             STEP 4 — CARD TRANSFER
+        ================================================== -->
+
+        <div class="add-money-step" id="addMoneyCardStep">
+          <div class="add-money-step-content">
+            <p class="add-money-label">Card Transfer</p>
+
+            <p class="add-money-description">
+              Pay securely using your debit or credit card.
+            </p>
+
+            <div class="card-coming-soon">
+              <div class="card-coming-soon-icon">
+                <i class="bi bi-credit-card"></i>
+              </div>
+
+              <h3>Card payments coming soon</h3>
+
+              <p>
+                This will be connected to Montana PayApp's payment provider
+                during backend integration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      onclick="createTransactionPin()"
+      style="position: fixed; bottom: 20px; right: 20px; z-index: 1000"
+    >
+      Create Transaction PIN
+    </button>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous">
-    </script>
-    
+      crossorigin="anonymous"
+    ></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
       integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-      crossorigin="anonymous">
-    </script>
+      crossorigin="anonymous"
+    ></script>
 
     <script src="https://cdn.jsdelivr.net/npm/notiflix@3/dist/notiflix-aio-3.2.8.min.js"></script>
 
     <script src="../js/customer-dash.js"></script>
-
-</body>
-
+  </body>
 </html>

@@ -1,0 +1,596 @@
+/* =========================================================
+   MONTANAPAYAPP — SAVINGS PAGE
+   customer-save.css
+   ========================================================= */
+
+/* ---------- ROOT / BRAND ---------- */
+
+:root {
+  --mp-dark: #1f2937;
+  --mp-dark-deep: #111827;
+  --mp-text: #1f2937;
+  --mp-muted: #6b7280;
+
+  --mp-primary: #2563eb;
+  --mp-primary-dark: #1d4ed8;
+  --mp-primary-soft: #eff6ff;
+
+  --mp-white: #ffffff;
+  --mp-bg: #f8fafc;
+  --mp-border: #e5e7eb;
+
+  --mp-success: #16a34a;
+  --mp-success-soft: #f0fdf4;
+
+  --mp-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+  --mp-shadow-hover: 0 16px 40px rgba(15, 23, 42, 0.11);
+
+  --mp-radius: 18px;
+}
+
+/* ---------- GENERAL PAGE ---------- */
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--mp-bg);
+  color: var(--mp-text);
+}
+
+.savings-page {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 32px 70px;
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.savings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.savings-header h1 {
+  margin: 0 0 7px;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--mp-dark);
+  letter-spacing: -0.5px;
+}
+
+.savings-header p {
+  margin: 0;
+  color: var(--mp-muted);
+  font-size: 14px;
+}
+
+.back-dashboard-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 11px 17px;
+
+  border: 1px solid var(--mp-border);
+  border-radius: 10px;
+
+  background: var(--mp-white);
+  color: var(--mp-dark);
+
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+.back-dashboard-btn:hover {
+  border-color: var(--mp-primary);
+  color: var(--mp-primary);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   SAVINGS OVERVIEW
+   ========================================================= */
+
+.savings-overview {
+  margin-bottom: 42px;
+}
+
+.savings-overview-card {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 170px;
+  padding: 32px 38px;
+
+  border-radius: var(--mp-radius);
+
+  background: var(--mp-dark);
+
+  box-shadow: var(--mp-shadow);
+}
+
+/* subtle background decoration */
+.savings-overview-card::after {
+  content: "";
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  right: -55px;
+  top: -70px;
+
+  border-radius: 50%;
+
+  border: 35px solid rgba(255, 255, 255, 0.035);
+}
+
+.overview-label {
+  display: block;
+  margin-bottom: 10px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.savings-overview-info h2 {
+  margin: 0;
+
+  color: var(--mp-white);
+
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.savings-overview-icon {
+  position: relative;
+  z-index: 2;
+
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.09);
+  color: var(--mp-white);
+
+  font-size: 25px;
+}
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+.section-heading {
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  margin: 0 0 6px;
+
+  color: var(--mp-dark);
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.section-heading p {
+  margin: 0;
+
+  color: var(--mp-muted);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   SAVINGS PLANS
+   ========================================================= */
+
+.savings-plans-section {
+  margin-bottom: 50px;
+}
+
+.savings-plan-card {
+  height: 100%;
+
+  display: flex;
+  gap: 22px;
+
+  padding: 27px;
+
+  background: var(--mp-white);
+
+  border: 1px solid var(--mp-border);
+  border-radius: var(--mp-radius);
+
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.035);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.savings-plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--mp-shadow-hover);
+  border-color: rgba(37, 99, 235, 0.25);
+}
+
+/* ---------- PLAN ICON ---------- */
+
+.plan-icon {
+  flex: 0 0 52px;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: var(--mp-primary-soft);
+  color: var(--mp-primary);
+
+  font-size: 21px;
+}
+
+.target-plan .plan-icon {
+  background: var(--mp-success-soft);
+  color: var(--mp-success);
+}
+
+/* ---------- PLAN CONTENT ---------- */
+
+.plan-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.plan-content h3 {
+  margin: 2px 0 7px;
+
+  color: var(--mp-dark);
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.plan-content > p {
+  margin: 0 0 20px;
+
+  color: var(--mp-muted);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   PLAN BALANCE
+   ========================================================= */
+
+.plan-balance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 13px 0;
+
+  border-top: 1px solid var(--mp-border);
+  border-bottom: 1px solid var(--mp-border);
+
+  margin-bottom: 18px;
+}
+
+.plan-balance span {
+  color: var(--mp-muted);
+  font-size: 12px;
+}
+
+.plan-balance strong {
+  color: var(--mp-dark);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   TARGET SAVINGS DETAILS
+   ========================================================= */
+
+.plan-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+
+  margin-bottom: 19px;
+}
+
+.plan-details span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: var(--mp-muted);
+
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.plan-details i {
+  color: var(--mp-primary);
+}
+
+.target-plan .plan-details i {
+  color: var(--mp-success);
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.choose-savings-btn {
+  width: 100%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 12px 18px;
+
+  border: 0;
+  border-radius: 10px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    background 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.flexible-savings-btn {
+  background: var(--mp-primary);
+  color: var(--mp-white);
+}
+
+.flexible-savings-btn:hover {
+  background: var(--mp-primary-dark);
+  color: var(--mp-white);
+  transform: translateY(-1px);
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.18);
+}
+
+.target-savings-btn {
+  background: var(--mp-primary);
+  color: var(--mp-white);
+}
+
+.target-savings-btn:hover {
+  background: var(--mp-dark-deep);
+  color: var(--mp-white);
+  transform: translateY(-1px);
+  box-shadow: 0 7px 18px rgba(31, 41, 55, 0.18);
+}
+
+.choose-savings-btn i {
+  font-size: 11px;
+  transition: transform 0.2s ease;
+}
+
+.choose-savings-btn:hover i {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   RECENT SAVINGS ACTIVITY
+   ========================================================= */
+
+.savings-activity-section {
+  margin-top: 10px;
+}
+
+.empty-savings-activity {
+  min-height: 240px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 35px 20px;
+
+  text-align: center;
+
+  background: var(--mp-white);
+
+  border: 1px dashed #d1d5db;
+  border-radius: var(--mp-radius);
+}
+
+.empty-activity-icon {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+
+  border-radius: 50%;
+
+  background: #f3f4f6;
+  color: var(--mp-muted);
+
+  font-size: 21px;
+}
+
+.empty-savings-activity h3 {
+  margin: 0 0 7px;
+
+  color: var(--mp-dark);
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.empty-savings-activity p {
+  max-width: 400px;
+
+  margin: 0;
+
+  color: var(--mp-muted);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+  .savings-page {
+    padding: 32px 24px 60px;
+  }
+
+  .savings-header h1 {
+    font-size: 28px;
+  }
+
+  .savings-plan-card {
+    padding: 24px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .savings-page {
+    padding: 25px 16px 50px;
+  }
+
+  .savings-header {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 28px;
+  }
+
+  .savings-header h1 {
+    font-size: 25px;
+  }
+
+  .back-dashboard-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .savings-overview-card {
+    min-height: 145px;
+    padding: 25px;
+  }
+
+  .savings-overview-info h2 {
+    font-size: 28px;
+  }
+
+  .savings-overview-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 21px;
+  }
+
+  .section-heading h2 {
+    font-size: 19px;
+  }
+
+  .savings-plan-card {
+    gap: 16px;
+    padding: 21px;
+  }
+
+  .plan-icon {
+    flex-basis: 45px;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .plan-content h3 {
+    font-size: 16px;
+  }
+
+  .plan-details {
+    flex-direction: column;
+    gap: 9px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .savings-page {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .savings-overview-card {
+    padding: 22px;
+  }
+
+  .savings-overview-info h2 {
+    font-size: 24px;
+  }
+
+  .savings-overview-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+  }
+
+  .savings-plan-card {
+    flex-direction: column;
+  }
+
+  .plan-icon {
+    flex-basis: auto;
+  }
+
+  .plan-balance {
+    gap: 10px;
+  }
+
+  .empty-savings-activity {
+    min-height: 210px;
+  }
+}
