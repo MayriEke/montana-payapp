@@ -24,93 +24,98 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
     <!-- Existing stylesheet -->
     <link rel="stylesheet" href="../css/customer-save.css" />
   </head>
 
   <body>
-    <!--SAVINGS PAGE-->
+    <!-- =========================
+       SAVINGS PAGE
+  ========================== -->
 
     <main class="savings-page">
-      <!-- Page Header -->
+      <!-- =========================
+         PAGE HEADER
+    ========================== -->
+
       <section class="savings-header">
-        <div>
-          <h1>Savings</h1>
-          <p>Choose a savings plan that works for you.</p>
-        </div>
+        <div class="savings-header-content">
+          <a href="dashboard.html" class="back-dashboard-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Dashboard
+          </a>
 
-        <a href="dashboard.html" class="back-dashboard-btn">
-          <i class="fa-solid fa-arrow-left"></i>
-          Back to Dashboard
-        </a>
-      </section>
+          <h1>Save</h1>
 
-      <!-- SAVINGS OVERVIEW-->
-
-      <section class="savings-overview">
-        <div class="savings-overview-card">
-          <div class="savings-overview-info">
-            <span class="overview-label"> Total Savings Balance </span>
-
-            <h2 id="totalSavingsBalance">₦0.00</h2>
-          </div>
-
-          <div class="savings-overview-icon">
-            <i class="fa-solid fa-piggy-bank"></i>
-          </div>
+          <p>Choose how you want to save and manage your money.</p>
         </div>
       </section>
 
-      <!--  CHOOSE SAVINGS PLAN -->
+      <!-- =========================
+         SAVINGS OPTIONS
+    ========================== -->
 
-      <section class="savings-plans-section">
+      <section class="savings-options-section">
         <div class="section-heading">
-          <h2>Choose a Savings Plan</h2>
+          <h2>Choose a Savings Option</h2>
 
-          <p>Save your money your way and work towards your financial goals.</p>
+          <p>
+            Select an option that best fits how you want to manage your money.
+          </p>
         </div>
 
         <div class="row g-4">
-          <!-- FLEXIBLE SAVINGS -->
+          <!-- =========================
+             FLEXIBLE SAVINGS
+        ========================== -->
 
-          <div class="col-lg-6">
-            <div class="savings-plan-card flexible-plan">
-              <div class="plan-icon">
+          <div class="col-lg-4">
+            <div class="savings-option-card flexible-option">
+              <div class="saving-option-icon">
                 <i class="fa-solid fa-wallet"></i>
               </div>
 
-              <div class="plan-content">
+              <div class="saving-option-content">
                 <h3>Flexible Savings</h3>
 
                 <p>Add money anytime and save at your own pace.</p>
 
-                <div class="plan-balance">
-                  <span>Your Balance</span>
+                <div class="saving-option-balance">
+                  <span>Balance</span>
 
                   <strong id="flexibleSavingsBalance"> ₦0.00 </strong>
                 </div>
 
                 <button
                   type="button"
-                  class="btn choose-savings-btn flexible-savings-btn"
+                  class="btn choose-savings-option flexible-savings-btn"
                   id="chooseFlexibleSavings"
                 >
                   Add Money
+
                   <i class="fa-solid fa-arrow-right"></i>
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- TARGET SAVINGS -->
+          <!-- =========================
+             TARGET SAVINGS
+        ========================== -->
 
-          <div class="col-lg-6">
-            <div class="savings-plan-card target-plan">
-              <div class="plan-icon">
+          <div class="col-lg-4">
+            <div class="savings-option-card target-option">
+              <div class="saving-option-icon">
                 <i class="fa-solid fa-bullseye"></i>
               </div>
 
-              <div class="plan-content">
+              <div class="saving-option-content">
                 <h3>Target Savings</h3>
 
                 <p>
@@ -118,30 +123,68 @@
                   weekly, or monthly.
                 </p>
 
-                <div class="plan-details">
-                  <span>
-                    <i class="fa-solid fa-naira-sign"></i>
-                    Start from ₦500
-                  </span>
+                <div class="saving-option-details">
+                  <span> Start from ₦500 </span>
 
-                  <span>
-                    <i class="fa-solid fa-calendar-days"></i>
-                    Daily, Weekly or Monthly
-                  </span>
+                  <span> Daily, Weekly or Monthly </span>
                 </div>
 
-                <div class="plan-balance">
-                  <span>Your Balance</span>
+                <div class="saving-option-balance">
+                  <span>Balance</span>
 
                   <strong id="targetSavingsBalance"> ₦0.00 </strong>
                 </div>
 
                 <button
                   type="button"
-                  class="btn choose-savings-btn target-savings-btn"
+                  class="btn choose-savings-option target-savings-btn"
                   id="chooseTargetSavings"
                 >
-                  Start Target Savings
+                  Start Saving
+
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- =========================
+             LOCK FUNDS
+        ========================== -->
+
+          <div class="col-lg-4">
+            <div class="savings-option-card lock-funds-option">
+              <div class="saving-option-icon">
+                <i class="fa-solid fa-lock"></i>
+              </div>
+
+              <div class="saving-option-content">
+                <h3>Lock Funds</h3>
+
+                <p>
+                  Lock money for a selected period and keep it untouched until
+                  the lock period ends.
+                </p>
+
+                <div class="saving-option-details">
+                  <span> Choose your lock period </span>
+
+                  <span> Keep your money secured </span>
+                </div>
+
+                <div class="saving-option-balance">
+                  <span>Locked Funds</span>
+
+                  <strong id="lockedFundsBalance"> ₦0.00 </strong>
+                </div>
+
+                <button
+                  type="button"
+                  class="btn choose-savings-option lock-funds-btn"
+                  id="chooseLockFunds"
+                >
+                  Lock Funds
+
                   <i class="fa-solid fa-arrow-right"></i>
                 </button>
               </div>
@@ -151,18 +194,13 @@
       </section>
     </main>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-      crossorigin="anonymous"
-    ></script>
-
+    <!-- Notiflix -->
     <script src="https://cdn.jsdelivr.net/npm/notiflix@3/dist/notiflix-aio-3.2.8.min.js"></script>
+
+    <!-- Customer savings JS -->
+    <script src="../js/customer-save.js"></script>
   </body>
 </html>

@@ -1,567 +1,274 @@
-/* =========================================================
-   MONTANAPAYAPP — SAVINGS PAGE
-   customer-save.css
-   ========================================================= */
-
-/* ---------- ROOT / BRAND ---------- */
-
-:root {
-  --mp-dark: #1f2937;
-  --mp-dark-deep: #111827;
-  --mp-text: #1f2937;
-  --mp-muted: #6b7280;
-
-  --mp-primary: #2563eb;
-  --mp-primary-dark: #1d4ed8;
-  --mp-primary-soft: #eff6ff;
-
-  --mp-white: #ffffff;
-  --mp-bg: #f8fafc;
-  --mp-border: #e5e7eb;
-
-  --mp-success: #16a34a;
-  --mp-success-soft: #f0fdf4;
-
-  --mp-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
-  --mp-shadow-hover: 0 16px 40px rgba(15, 23, 42, 0.11);
-
-  --mp-radius: 18px;
-}
-
-/* ---------- GENERAL PAGE ---------- */
-
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: var(--mp-bg);
-  color: var(--mp-text);
-}
+/* =========================================
+   SAVINGS PAGE
+========================================= */
 
 .savings-page {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 40px 32px 70px;
+  min-height: 100vh;
+  padding: 35px;
+  background: #f6f9fc;
 }
 
-/* =========================================================
-   PAGE HEADER
-   ========================================================= */
+/* =========================================
+   SAVINGS HEADER
+========================================= */
 
 .savings-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
-.savings-header h1 {
-  margin: 0 0 7px;
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--mp-dark);
-  letter-spacing: -0.5px;
-}
-
-.savings-header p {
-  margin: 0;
-  color: var(--mp-muted);
-  font-size: 14px;
+.savings-header-content {
+  max-width: 700px;
 }
 
 .back-dashboard-btn {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
+  margin-bottom: 20px;
 
-  padding: 11px 17px;
-
-  border: 1px solid var(--mp-border);
-  border-radius: 10px;
-
-  background: var(--mp-white);
-  color: var(--mp-dark);
-
-  font-size: 13px;
-  font-weight: 600;
+  color: #64748b;
   text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
 
-  transition: all 0.25s ease;
+  transition: 0.3s ease;
 }
 
 .back-dashboard-btn:hover {
-  border-color: var(--mp-primary);
-  color: var(--mp-primary);
-  transform: translateY(-1px);
+  color: #3f8ae0;
 }
 
-/* =========================================================
-   SAVINGS OVERVIEW
-   ========================================================= */
+.savings-header h1 {
+  margin-bottom: 8px;
 
-.savings-overview {
-  margin-bottom: 42px;
+  color: #081c2e;
+  font-size: 30px;
+  font-weight: 700;
 }
 
-.savings-overview-card {
-  position: relative;
-  overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  min-height: 170px;
-  padding: 32px 38px;
-
-  border-radius: var(--mp-radius);
-
-  background: var(--mp-dark);
-
-  box-shadow: var(--mp-shadow);
-}
-
-/* subtle background decoration */
-.savings-overview-card::after {
-  content: "";
-  position: absolute;
-
-  width: 190px;
-  height: 190px;
-
-  right: -55px;
-  top: -70px;
-
-  border-radius: 50%;
-
-  border: 35px solid rgba(255, 255, 255, 0.035);
-}
-
-.overview-label {
-  display: block;
-  margin-bottom: 10px;
-
-  color: rgba(255, 255, 255, 0.72);
-
-  font-size: 13px;
-  font-weight: 500;
-}
-
-.savings-overview-info h2 {
+.savings-header p {
   margin: 0;
 
-  color: var(--mp-white);
-
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  color: #64748b;
+  font-size: 15px;
 }
 
-.savings-overview-icon {
-  position: relative;
-  z-index: 2;
+/* =========================================
+   SAVINGS OPTIONS SECTION
+========================================= */
 
-  width: 62px;
-  height: 62px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 16px;
-
-  background: rgba(255, 255, 255, 0.09);
-  color: var(--mp-white);
-
-  font-size: 25px;
+.savings-options-section {
+  margin-bottom: 40px;
 }
-
-/* =========================================================
-   SECTION HEADINGS
-   ========================================================= */
 
 .section-heading {
   margin-bottom: 22px;
 }
 
 .section-heading h2 {
-  margin: 0 0 6px;
+  margin-bottom: 6px;
 
-  color: var(--mp-dark);
+  color: #081c2e;
 
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 700;
 }
 
 .section-heading p {
   margin: 0;
 
-  color: var(--mp-muted);
+  color: #64748b;
 
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: 14px;
 }
 
-/* =========================================================
-   SAVINGS PLANS
-   ========================================================= */
+/* =========================================
+   SAVINGS OPTION CARD
+========================================= */
 
-.savings-plans-section {
-  margin-bottom: 50px;
-}
-
-.savings-plan-card {
+.savings-option-card {
   height: 100%;
 
-  display: flex;
-  gap: 22px;
+  padding: 26px;
 
-  padding: 27px;
+  background: #ffffff;
 
-  background: var(--mp-white);
+  border: 1px solid #e5edf6;
+  border-radius: 18px;
 
-  border: 1px solid var(--mp-border);
-  border-radius: var(--mp-radius);
-
-  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.035);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+  transition: 0.3s ease;
 }
 
-.savings-plan-card:hover {
+.savings-option-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--mp-shadow-hover);
-  border-color: rgba(37, 99, 235, 0.25);
+
+  border-color: #3f8ae0;
+
+  box-shadow: 0 12px 30px rgba(63, 138, 224, 0.1);
 }
 
-/* ---------- PLAN ICON ---------- */
+/* =========================================
+   OPTION ICON
+========================================= */
 
-.plan-icon {
-  flex: 0 0 52px;
+.saving-option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   width: 52px;
   height: 52px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 22px;
 
-  border-radius: 14px;
+  background: #edf5ff;
 
-  background: var(--mp-primary-soft);
-  color: var(--mp-primary);
+  border-radius: 15px;
+
+  color: #3f8ae0;
 
   font-size: 21px;
 }
 
-.target-plan .plan-icon {
-  background: var(--mp-success-soft);
-  color: var(--mp-success);
-}
+/* =========================================
+   OPTION CONTENT
+========================================= */
 
-/* ---------- PLAN CONTENT ---------- */
+.saving-option-content h3 {
+  margin-bottom: 10px;
 
-.plan-content {
-  flex: 1;
-  min-width: 0;
-}
+  color: #081c2e;
 
-.plan-content h3 {
-  margin: 2px 0 7px;
-
-  color: var(--mp-dark);
-
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
 }
 
-.plan-content > p {
-  margin: 0 0 20px;
+.saving-option-content p {
+  min-height: 48px;
 
-  color: var(--mp-muted);
+  margin-bottom: 18px;
 
-  font-size: 13px;
+  color: #64748b;
+
+  font-size: 14px;
   line-height: 1.7;
 }
 
-/* =========================================================
-   PLAN BALANCE
-   ========================================================= */
+/* =========================================
+   OPTION DETAILS
+========================================= */
 
-.plan-balance {
+.saving-option-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-bottom: 20px;
+}
+
+.saving-option-details span {
+  padding: 7px 10px;
+
+  background: #edf5ff;
+
+  border-radius: 8px;
+
+  color: #3f8ae0;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================================
+   SAVINGS BALANCE
+========================================= */
+
+.saving-option-balance {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 13px 0;
+  padding: 15px 0;
 
-  border-top: 1px solid var(--mp-border);
-  border-bottom: 1px solid var(--mp-border);
+  margin-bottom: 20px;
 
-  margin-bottom: 18px;
+  border-top: 1px solid #e5edf6;
+  border-bottom: 1px solid #e5edf6;
 }
 
-.plan-balance span {
-  color: var(--mp-muted);
-  font-size: 12px;
+.saving-option-balance span {
+  color: #64748b;
+
+  font-size: 13px;
 }
 
-.plan-balance strong {
-  color: var(--mp-dark);
-  font-size: 16px;
+.saving-option-balance strong {
+  color: #081c2e;
+
+  font-size: 17px;
   font-weight: 700;
 }
 
-/* =========================================================
-   TARGET SAVINGS DETAILS
-   ========================================================= */
+/* =========================================
+   SAVINGS BUTTONS
+========================================= */
 
-.plan-details {
+.choose-savings-option {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px 20px;
-
-  margin-bottom: 19px;
-}
-
-.plan-details span {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-
-  color: var(--mp-muted);
-
-  font-size: 11px;
-  font-weight: 500;
-}
-
-.plan-details i {
-  color: var(--mp-primary);
-}
-
-.target-plan .plan-details i {
-  color: var(--mp-success);
-}
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-
-.choose-savings-btn {
-  width: 100%;
-
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 10px;
 
-  padding: 12px 18px;
+  width: 100%;
 
-  border: 0;
+  padding: 12px 16px;
+
+  background: #3f8ae0;
+
+  border: none;
   border-radius: 10px;
 
-  font-family: "Poppins", sans-serif;
-  font-size: 13px;
+  color: #ffffff;
+
+  font-size: 14px;
   font-weight: 600;
 
-  transition:
-    background 0.25s ease,
-    transform 0.2s ease,
-    box-shadow 0.25s ease;
+  transition: 0.3s ease;
 }
 
-.flexible-savings-btn {
-  background: var(--mp-primary);
-  color: var(--mp-white);
-}
+.choose-savings-option:hover {
+  background: #2d78cf;
 
-.flexible-savings-btn:hover {
-  background: var(--mp-primary-dark);
-  color: var(--mp-white);
+  color: #ffffff;
+
   transform: translateY(-1px);
-  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.18);
 }
 
-.target-savings-btn {
-  background: var(--mp-primary);
-  color: var(--mp-white);
+.choose-savings-option i {
+  transition: 0.3s ease;
 }
 
-.target-savings-btn:hover {
-  background: var(--mp-dark-deep);
-  color: var(--mp-white);
-  transform: translateY(-1px);
-  box-shadow: 0 7px 18px rgba(31, 41, 55, 0.18);
-}
-
-.choose-savings-btn i {
-  font-size: 11px;
-  transition: transform 0.2s ease;
-}
-
-.choose-savings-btn:hover i {
+.choose-savings-option:hover i {
   transform: translateX(3px);
 }
 
-/* =========================================================
-   RECENT SAVINGS ACTIVITY
-   ========================================================= */
-
-.savings-activity-section {
-  margin-top: 10px;
-}
-
-.empty-savings-activity {
-  min-height: 240px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 35px 20px;
-
-  text-align: center;
-
-  background: var(--mp-white);
-
-  border: 1px dashed #d1d5db;
-  border-radius: var(--mp-radius);
-}
-
-.empty-activity-icon {
-  width: 56px;
-  height: 56px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 15px;
-
-  border-radius: 50%;
-
-  background: #f3f4f6;
-  color: var(--mp-muted);
-
-  font-size: 21px;
-}
-
-.empty-savings-activity h3 {
-  margin: 0 0 7px;
-
-  color: var(--mp-dark);
-
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.empty-savings-activity p {
-  max-width: 400px;
-
-  margin: 0;
-
-  color: var(--mp-muted);
-
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-/* =========================================================
-   RESPONSIVE — TABLET
-   ========================================================= */
+/* =========================================
+   RESPONSIVE
+========================================= */
 
 @media (max-width: 991px) {
   .savings-page {
-    padding: 32px 24px 60px;
-  }
-
-  .savings-header h1 {
-    font-size: 28px;
-  }
-
-  .savings-plan-card {
-    padding: 24px;
-  }
-}
-
-/* =========================================================
-   RESPONSIVE — MOBILE
-   ========================================================= */
-
-@media (max-width: 767px) {
-  .savings-page {
-    padding: 25px 16px 50px;
-  }
-
-  .savings-header {
-    align-items: flex-start;
-    flex-direction: column;
-    margin-bottom: 28px;
-  }
-
-  .savings-header h1 {
-    font-size: 25px;
-  }
-
-  .back-dashboard-btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .savings-overview-card {
-    min-height: 145px;
     padding: 25px;
   }
-
-  .savings-overview-info h2 {
-    font-size: 28px;
-  }
-
-  .savings-overview-icon {
-    width: 52px;
-    height: 52px;
-    font-size: 21px;
-  }
-
-  .section-heading h2 {
-    font-size: 19px;
-  }
-
-  .savings-plan-card {
-    gap: 16px;
-    padding: 21px;
-  }
-
-  .plan-icon {
-    flex-basis: 45px;
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
-  }
-
-  .plan-content h3 {
-    font-size: 16px;
-  }
-
-  .plan-details {
-    flex-direction: column;
-    gap: 9px;
-  }
 }
 
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .savings-page {
-    padding-left: 13px;
-    padding-right: 13px;
+    padding: 20px 15px;
+  }
+
+  .savings-header h1 {
+    font-size: 26px;
   }
 
   .savings-overview-card {
@@ -569,28 +276,1332 @@ body {
   }
 
   .savings-overview-info h2 {
-    font-size: 24px;
+    font-size: 27px;
+  }
+
+  .savings-option-card {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .savings-overview-card {
+    padding: 20px;
   }
 
   .savings-overview-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 13px;
+    width: 48px;
+    height: 48px;
+
+    font-size: 20px;
   }
 
-  .savings-plan-card {
+  .section-heading h2 {
+    font-size: 20px;
+  }
+}
+
+/* TARGET SAVING STYLING */
+/* =========================================================
+   TARGET SAVINGS MODAL
+========================================================= */
+
+#targetSavingsModal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.target-modal-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(8, 28, 46, 0.58);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  overflow-y: auto;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.target-modal {
+  width: 100%;
+  max-width: 560px;
+
+  max-height: 92vh;
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow: 0 20px 60px rgba(8, 28, 46, 0.22);
+
+  padding: 0;
+
+  animation: targetModalAppear 0.25s ease;
+}
+
+@keyframes targetModalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.target-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 24px 26px 18px;
+
+  border-bottom: 1px solid #e5edf6;
+}
+
+.target-modal-header h3 {
+  margin: 0;
+
+  color: #081c2e;
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.target-modal-header p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.target-modal-close {
+  width: 34px;
+  height: 34px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f6f9fc;
+
+  color: #64748b;
+
+  font-size: 24px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.target-modal-close:hover {
+  background: #edf5ff;
+  color: #3f8ae0;
+}
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.target-progress {
+  width: 100%;
+  height: 4px;
+
+  background: #edf5ff;
+}
+
+.target-progress-bar {
+  width: 20%;
+  height: 100%;
+
+  background: #3f8ae0;
+
+  transition: width 0.3s ease;
+}
+
+/* =========================================================
+   STEP
+========================================================= */
+
+.target-step {
+  padding: 26px;
+}
+
+.target-step h4 {
+  margin: 0 0 6px;
+
+  color: #081c2e;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.target-help {
+  margin: 0 0 22px;
+
+  color: #64748b;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.target-form-group {
+  margin-bottom: 18px;
+}
+
+.target-form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #1f2937;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   MONEY INPUT
+========================================================= */
+
+.target-money-input {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  border: 1px solid #e5edf6;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  transition: 0.2s ease;
+}
+
+.target-money-input:focus-within {
+  border-color: #3f8ae0;
+
+  box-shadow: 0 0 0 3px rgba(63, 138, 224, 0.1);
+}
+
+.target-money-input span {
+  padding-left: 14px;
+
+  color: #64748b;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.target-money-input input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  padding: 13px 14px 13px 8px;
+
+  color: #1f2937;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+
+  background: transparent;
+}
+
+.target-money-input input::-webkit-outer-spin-button,
+.target-money-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.target-money-input input[type="number"] {
+  appearance: textfield;
+}
+
+.target-form-group small {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #dc3545;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   DATE / TIME / SELECT INPUTS
+========================================================= */
+
+.target-form-group select,
+.target-form-group input[type="date"],
+.target-form-group input[type="time"] {
+  width: 100%;
+
+  padding: 13px 14px;
+
+  border: 1px solid #e5edf6;
+  border-radius: 10px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #1f2937;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+
+  transition: 0.2s ease;
+}
+
+.target-form-group select:focus,
+.target-form-group input[type="date"]:focus,
+.target-form-group input[type="time"]:focus {
+  border-color: #3f8ae0;
+
+  box-shadow: 0 0 0 3px rgba(63, 138, 224, 0.1);
+}
+
+/* =========================================================
+   FREQUENCY
+========================================================= */
+
+.target-frequency-heading {
+  margin-top: 25px !important;
+}
+
+.target-frequency-options {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-bottom: 24px;
+}
+
+.target-frequency-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  min-height: 125px;
+
+  padding: 16px;
+
+  border: 1px solid #e5edf6;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #1f2937;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.target-frequency-option i {
+  margin-bottom: 12px;
+
+  color: #3f8ae0;
+
+  font-size: 19px;
+}
+
+.target-frequency-option strong {
+  margin-bottom: 4px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.target-frequency-option span {
+  color: #64748b;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.target-frequency-option:hover {
+  border-color: #69aef3;
+
+  background: #edf5ff;
+
+  transform: translateY(-2px);
+}
+
+.target-frequency-option.selected {
+  border-color: #3f8ae0;
+
+  background: #edf5ff;
+
+  box-shadow: 0 0 0 2px rgba(63, 138, 224, 0.1);
+}
+
+.target-frequency-option.selected strong {
+  color: #3f8ae0;
+}
+
+/* =========================================================
+   PAYMENT OPTIONS
+========================================================= */
+
+.target-payment-options {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+.target-payment-option {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 17px;
+
+  border: 1px solid #e5edf6;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.target-payment-option:hover {
+  border-color: #3f8ae0;
+
+  background: #edf5ff;
+}
+
+.target-payment-option > i {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: #edf5ff;
+
+  color: #3f8ae0;
+
+  font-size: 17px;
+}
+
+.target-payment-option div {
+  display: flex;
+  flex-direction: column;
+}
+
+.target-payment-option strong {
+  color: #1f2937;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.target-payment-option span {
+  margin-top: 3px;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   REVIEW
+========================================================= */
+
+.target-review-box {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #e5edf6;
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  margin-bottom: 18px;
+}
+
+.target-review-box div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 13px 15px;
+
+  border-bottom: 1px solid #e5edf6;
+}
+
+.target-review-box div:last-child {
+  border-bottom: none;
+}
+
+.target-review-box span {
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+.target-review-box strong {
+  color: #1f2937;
+
+  font-size: 12px;
+
+  text-align: right;
+}
+
+/* =========================================================
+   TARGET CALCULATION
+========================================================= */
+
+.target-calculation {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding: 14px 15px;
+
+  margin-bottom: 20px;
+
+  border-radius: 10px;
+
+  background: #edf5ff;
+}
+
+.target-calculation strong {
+  color: #3f8ae0;
+
+  font-size: 13px;
+}
+
+.target-calculation span {
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   AGREEMENT
+========================================================= */
+
+.target-agreement {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 11px;
+
+  padding: 14px;
+
+  margin-bottom: 12px;
+
+  border: 1px solid #e5edf6;
+  border-radius: 10px;
+
+  background: #f6f9fc;
+
+  cursor: pointer;
+}
+
+.target-agreement input {
+  width: 17px;
+  height: 17px;
+
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  accent-color: #3f8ae0;
+
+  cursor: pointer;
+}
+
+.target-agreement span {
+  color: #1f2937;
+
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.target-agreement:has(input:checked) {
+  border-color: #3f8ae0;
+
+  background: #edf5ff;
+}
+
+.target-agreement-error {
+  min-height: 18px;
+
+  margin-bottom: 8px;
+
+  color: #dc3545;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.target-primary-btn,
+.target-secondary-btn {
+  width: 100%;
+
+  border-radius: 10px;
+
+  padding: 13px 18px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.target-primary-btn {
+  border: 1px solid #3f8ae0;
+
+  background: #3f8ae0;
+
+  color: #ffffff;
+}
+
+.target-primary-btn:hover {
+  background: #2d78cf;
+
+  border-color: #2d78cf;
+
+  transform: translateY(-1px);
+}
+
+.target-secondary-btn {
+  margin-top: 10px;
+
+  border: 1px solid #e5edf6;
+
+  background: #ffffff;
+
+  color: #64748b;
+}
+
+.target-secondary-btn:hover {
+  border-color: #3f8ae0;
+
+  color: #3f8ae0;
+
+  background: #edf5ff;
+}
+
+.target-step-buttons {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 8px;
+}
+
+.target-step-buttons .target-primary-btn,
+.target-step-buttons .target-secondary-btn {
+  margin-top: 0;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+  .target-modal-overlay {
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .target-modal {
+    max-height: 96vh;
+
+    margin-top: 10px;
+
+    border-radius: 15px;
+  }
+
+  .target-modal-header {
+    padding: 20px 18px 16px;
+  }
+
+  .target-step {
+    padding: 20px 18px;
+  }
+
+  .target-frequency-options {
+    grid-template-columns: 1fr;
+  }
+
+  .target-frequency-option {
+    min-height: auto;
+
+    flex-direction: row;
+    align-items: center;
+
+    gap: 12px;
+  }
+
+  .target-frequency-option i {
+    margin: 0;
+  }
+
+  .target-frequency-option strong {
+    margin: 0;
+  }
+
+  .target-frequency-option span {
+    margin-left: auto;
+  }
+
+  .target-step-buttons {
     flex-direction: column;
   }
+}
 
-  .plan-icon {
-    flex-basis: auto;
+.target-primary-btn:disabled {
+  background: #cbd5e1;
+  border-color: #cbd5e1;
+  color: #ffffff;
+
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* =================================================
+   LOCK FUNDS MODAL
+================================================= */
+
+#lockFundsModal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 28, 46, 0.55);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  z-index: 9999;
+
+  overflow-y: auto;
+}
+
+/* =================================================
+   LOCK FUNDS MODAL CONTENT
+================================================= */
+
+#lockFundsModal .target-modal-content {
+  width: 100%;
+  max-width: 560px;
+
+  background: #ffffff;
+  border-radius: 18px;
+
+  box-shadow: 0 20px 60px rgba(8, 28, 46, 0.18);
+
+  overflow: hidden;
+
+  animation: lockFundsModalIn 0.25s ease;
+}
+
+@keyframes lockFundsModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
   }
 
-  .plan-balance {
-    gap: 10px;
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =================================================
+   MODAL HEADER
+================================================= */
+
+#lockFundsModal .target-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 24px 26px;
+
+  background: #f6f9fc;
+
+  border-bottom: 1px solid #e5edf6;
+}
+
+#lockFundsModal .target-modal-header h3 {
+  margin: 0 0 6px;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  color: #081c2e;
+}
+
+#lockFundsModal .target-modal-header p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  color: #64748b;
+}
+
+/* =================================================
+   CLOSE BUTTON
+================================================= */
+
+#lockFundsModal .target-modal-close {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #edf5ff;
+
+  color: #081c2e;
+
+  font-size: 24px;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+#lockFundsModal .target-modal-close:hover {
+  background: #3f8ae0;
+  color: #ffffff;
+
+  transform: rotate(90deg);
+}
+
+/* =================================================
+   MODAL BODY
+================================================= */
+
+#lockFundsModal .lock-step {
+  padding: 28px 26px 26px;
+}
+
+#lockFundsModal .lock-step h4 {
+  margin: 0 0 8px;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #1f2937;
+}
+
+#lockFundsModal .target-help {
+  margin: 0 0 22px;
+
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =================================================
+   LABELS
+================================================= */
+
+#lockFundsModal label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #1f2937;
+}
+
+/* =================================================
+   AMOUNT INPUT
+================================================= */
+
+#lockFundsModal #lockAmount {
+  width: 100%;
+
+  min-height: 52px;
+
+  padding: 12px 15px;
+
+  border: 1px solid #e5edf6;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #1f2937;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#lockFundsModal #lockAmount:focus {
+  border-color: #3f8ae0;
+
+  box-shadow: 0 0 0 3px rgba(63, 138, 224, 0.12);
+}
+
+#lockFundsModal #lockAmount::placeholder {
+  color: #94a3b8;
+}
+
+/* Remove number input arrows */
+
+#lockFundsModal #lockAmount::-webkit-inner-spin-button,
+#lockFundsModal #lockAmount::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#lockFundsModal #lockAmount {
+  appearance: textfield;
+}
+
+/* =================================================
+   HELPER TEXT
+================================================= */
+
+#lockFundsModal small {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+/* =================================================
+   STEP BUTTONS
+================================================= */
+
+#lockFundsModal .target-step-buttons {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 28px;
+}
+
+/* =================================================
+   PRIMARY BUTTON
+================================================= */
+
+#lockFundsModal .target-primary-btn {
+  min-width: 130px;
+
+  min-height: 46px;
+
+  padding: 11px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #3f8ae0;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#lockFundsModal .target-primary-btn:hover {
+  background: #2d78cf;
+
+  box-shadow: 0 6px 16px rgba(63, 138, 224, 0.22);
+
+  transform: translateY(-1px);
+}
+
+#lockFundsModal .target-primary-btn:active {
+  transform: translateY(0);
+}
+
+/* =================================================
+   MOBILE
+================================================= */
+
+@media (max-width: 576px) {
+  #lockFundsModal {
+    padding: 12px;
+    align-items: flex-start;
   }
 
-  .empty-savings-activity {
-    min-height: 210px;
+  #lockFundsModal .target-modal-content {
+    margin-top: 30px;
+
+    border-radius: 15px;
+  }
+
+  #lockFundsModal .target-modal-header {
+    padding: 20px;
+  }
+
+  #lockFundsModal .lock-step {
+    padding: 22px 20px;
+  }
+
+  #lockFundsModal .target-modal-header h3 {
+    font-size: 19px;
+  }
+
+  #lockFundsModal .target-step-buttons {
+    margin-top: 24px;
+  }
+
+  #lockFundsModal .target-primary-btn {
+    width: 100%;
+  }
+}
+
+/* =================================================
+   LOCK PERIOD OPTIONS
+================================================= */
+
+.lock-period-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.lock-period-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 16px;
+
+  border: 1px solid #e5edf6;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.lock-period-option strong {
+  color: #1f2937;
+  font-size: 15px;
+}
+
+.lock-period-option span {
+  margin-top: 4px;
+
+  color: #64748b;
+  font-size: 12px;
+}
+
+.lock-period-option:hover {
+  border-color: #3f8ae0;
+  background: #edf5ff;
+  transform: translateY(-1px);
+}
+
+.lock-period-option.selected {
+  border-color: #3f8ae0;
+  background: #edf5ff;
+
+  box-shadow: 0 0 0 2px rgba(63, 138, 224, 0.1);
+}
+
+/* =================================================
+   MATURITY PREVIEW
+================================================= */
+
+.lock-maturity-preview {
+  margin-top: 22px;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  background: #f6f9fc;
+
+  border: 1px solid #e5edf6;
+}
+
+.lock-maturity-preview span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+.lock-maturity-preview strong {
+  color: #081c2e;
+
+  font-size: 15px;
+}
+
+/* =================================================
+   DISABLED CONTINUE
+================================================= */
+
+#lockFundsModal .target-primary-btn:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+
+  transform: none;
+}
+
+/* =================================================
+   MOBILE
+================================================= */
+
+@media (max-width: 576px) {
+  .lock-period-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =================================================
+   LOCK FUNDS REVIEW
+================================================= */
+
+.lock-review-card {
+  margin-top: 20px;
+
+  border: 1px solid #e5edf6;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+.lock-review-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 15px 16px;
+
+  border-bottom: 1px solid #e5edf6;
+}
+
+.lock-review-row:last-child {
+  border-bottom: none;
+}
+
+.lock-review-row span {
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.lock-review-row strong {
+  color: #1f2937;
+
+  font-size: 14px;
+
+  text-align: right;
+}
+
+/* =================================================
+   LOCK NOTICE
+================================================= */
+
+.lock-review-notice {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin-top: 18px;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  background: #edf5ff;
+
+  border: 1px solid #d8eaff;
+}
+
+.lock-review-notice > i {
+  margin-top: 2px;
+
+  color: #3f8ae0;
+
+  font-size: 18px;
+}
+
+.lock-review-notice strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #081c2e;
+
+  font-size: 14px;
+}
+
+.lock-review-notice p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+/* ================================
+   LOCK FUNDS - AGREEMENT
+================================ */
+
+.lock-agreement-box {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lock-agreement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #e5edf6;
+  border-radius: 12px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.lock-agreement-item input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: #3f8ae0;
+  cursor: pointer;
+}
+
+.lock-agreement-item span {
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.lock-agreement-error {
+  margin-top: 12px;
+  color: #dc3545;
+  font-size: 13px;
+}
+
+@media (max-width: 576px) {
+  .lock-agreement-item {
+    padding: 14px;
+  }
+
+  .lock-agreement-item span {
+    font-size: 12px;
   }
 }

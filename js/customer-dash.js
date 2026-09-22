@@ -1,4 +1,6 @@
-/* BALANCE VISIBILITY*/
+/* ================================
+   BALANCE VISIBILITY
+================================ */
 
 const totalBalance = document.getElementById("totalBalance");
 const totalSavings = document.getElementById("totalSavings");
@@ -19,68 +21,93 @@ const totalSavingsVisibilityIcon = document.getElementById(
   "totalSavingsVisibilityIcon",
 );
 
-/* TOTAL BALANCE VISIBILITY*/
+const sidebarToggle = document.getElementById("sidebarToggle");
+
+const sidebar = document.querySelector(".dashboard-sidebar");
+
+/* ================================
+   TOTAL BALANCE VISIBILITY
+================================ */
 
 let isTotalBalanceVisible = true;
 
-totalBalanceVisibilityButton.addEventListener("click", function () {
-  if (isTotalBalanceVisible) {
-    totalBalance.textContent = "₦••••••";
+if (
+  totalBalance &&
+  totalBalanceVisibilityButton &&
+  totalBalanceVisibilityIcon
+) {
+  totalBalanceVisibilityButton.addEventListener("click", function () {
+    if (isTotalBalanceVisible) {
+      totalBalance.textContent = "₦••••••";
 
-    totalBalanceVisibilityIcon.classList.remove("bi-eye");
-    totalBalanceVisibilityIcon.classList.add("bi-eye-slash");
+      totalBalanceVisibilityIcon.classList.remove("bi-eye");
+      totalBalanceVisibilityIcon.classList.add("bi-eye-slash");
 
-    totalBalanceVisibilityButton.setAttribute(
-      "aria-label",
-      "Show total balance",
-    );
-  } else {
-    totalBalance.textContent = "₦0.00";
+      totalBalanceVisibilityButton.setAttribute(
+        "aria-label",
+        "Show total balance",
+      );
+    } else {
+      totalBalance.textContent = "₦0.00";
 
-    totalBalanceVisibilityIcon.classList.remove("bi-eye-slash");
-    totalBalanceVisibilityIcon.classList.add("bi-eye");
+      totalBalanceVisibilityIcon.classList.remove("bi-eye-slash");
+      totalBalanceVisibilityIcon.classList.add("bi-eye");
 
-    totalBalanceVisibilityButton.setAttribute(
-      "aria-label",
-      "Hide total balance",
-    );
-  }
+      totalBalanceVisibilityButton.setAttribute(
+        "aria-label",
+        "Hide total balance",
+      );
+    }
 
-  isTotalBalanceVisible = !isTotalBalanceVisible;
-});
+    isTotalBalanceVisible = !isTotalBalanceVisible;
+  });
+}
 
 /* TOTAL SAVINGS VISIBILITY*/
 
 let isTotalSavingsVisible = true;
 
-totalSavingsVisibilityButton.addEventListener("click", function () {
-  if (isTotalSavingsVisible) {
-    totalSavings.textContent = "₦••••••";
+if (
+  totalSavings &&
+  totalSavingsVisibilityButton &&
+  totalSavingsVisibilityIcon
+) {
+  totalSavingsVisibilityButton.addEventListener("click", function () {
+    if (isTotalSavingsVisible) {
+      totalSavings.textContent = "₦••••••";
 
-    totalSavingsVisibilityIcon.classList.remove("bi-eye");
-    totalSavingsVisibilityIcon.classList.add("bi-eye-slash");
+      totalSavingsVisibilityIcon.classList.remove("bi-eye");
+      totalSavingsVisibilityIcon.classList.add("bi-eye-slash");
 
-    totalSavingsVisibilityButton.setAttribute(
-      "aria-label",
-      "Show total savings",
-    );
-  } else {
-    totalSavings.textContent = "₦0.00";
+      totalSavingsVisibilityButton.setAttribute(
+        "aria-label",
+        "Show total savings",
+      );
+    } else {
+      totalSavings.textContent = "₦0.00";
 
-    totalSavingsVisibilityIcon.classList.remove("bi-eye-slash");
-    totalSavingsVisibilityIcon.classList.add("bi-eye");
+      totalSavingsVisibilityIcon.classList.remove("bi-eye-slash");
+      totalSavingsVisibilityIcon.classList.add("bi-eye");
 
-    totalSavingsVisibilityButton.setAttribute(
-      "aria-label",
-      "Hide total savings",
-    );
-  }
+      totalSavingsVisibilityButton.setAttribute(
+        "aria-label",
+        "Hide total savings",
+      );
+    }
 
-  isTotalSavingsVisible = !isTotalSavingsVisible;
-});
+    isTotalSavingsVisible = !isTotalSavingsVisible;
+  });
+}
+
+// MOBILE SIDEBAR TOGGLE
+if (sidebarToggle && sidebar) {
+  sidebarToggle.addEventListener("click", function () {
+    sidebar.classList.toggle("mobile-open");
+  });
+}
 
 // TRANSACTION PIN
-let transactionPin = null;
+let transactionPin = localStorage.getItem("montanaTransactionPin") || null;
 
 /* ADD MONEY */
 
@@ -307,30 +334,52 @@ if (quickAddMoney) {
   quickAddMoney.addEventListener("click", openAddMoneyModal);
 }
 
-addMoneyContinueButton.addEventListener("click", continueAddMoney);
+if (addMoneyContinueButton) {
+  addMoneyContinueButton.addEventListener("click", continueAddMoney);
+}
 
-bankTransferButton.addEventListener("click", openBankTransfer);
+if (bankTransferButton) {
+  bankTransferButton.addEventListener("click", openBankTransfer);
+}
 
-cardTransferButton.addEventListener("click", openCardTransfer);
+if (cardTransferButton) {
+  cardTransferButton.addEventListener("click", openCardTransfer);
+}
 
-bankTransferMadeButton.addEventListener("click", confirmBankTransferMade);
+if (bankTransferMadeButton) {
+  bankTransferMadeButton.addEventListener("click", confirmBankTransferMade);
+}
 
-addMoneyBackButton.addEventListener("click", goBackAddMoney);
+if (addMoneyBackButton) {
+  addMoneyBackButton.addEventListener("click", goBackAddMoney);
+}
 
-addMoneyCloseButton.addEventListener("click", closeAddMoneyModal);
+if (addMoneyCloseButton) {
+  addMoneyCloseButton.addEventListener("click", closeAddMoneyModal);
+}
 
-/* CLOSE WHEN CLICKING OUTSIDE */
+/* ================================
+   CLOSE WHEN CLICKING OUTSIDE
+================================ */
 
-addMoneyModal.addEventListener("click", function (event) {
-  if (event.target === addMoneyModal) {
-    closeAddMoneyModal();
-  }
-});
+if (addMoneyModal) {
+  addMoneyModal.addEventListener("click", function (event) {
+    if (event.target === addMoneyModal) {
+      closeAddMoneyModal();
+    }
+  });
+}
 
-/* ESCAPE KEY */
+/* ================================
+   ESCAPE KEY
+================================ */
 
 document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape" && addMoneyModal.classList.contains("active")) {
+  if (
+    event.key === "Escape" &&
+    addMoneyModal &&
+    addMoneyModal.classList.contains("active")
+  ) {
     closeAddMoneyModal();
   }
 });
@@ -554,6 +603,16 @@ function createTransactionPin(onSuccess) {
 
 // To verify the transaction PIN
 function verifyTransactionPin(onSuccess) {
+  const saveTransactionPin = localStorage.getItem("montanaTransactionPin");
+
+  if (!saveTransactionPin) {
+    Notiflix.Notify.warning(
+      "Please create a transaction PIN before continuing.",
+    );
+
+    return;
+  }
+
   Notiflix.Confirm.prompt(
     "Verify Transaction pin",
     "Enter your 4 digits PIN",
@@ -569,7 +628,7 @@ function verifyTransactionPin(onSuccess) {
         return;
       }
 
-      if (pin !== transactionPin) {
+      if (pin !== saveTransactionPin) {
         Notiflix.Notify.failure("Incorrect Pin. Please try again.");
         return;
       }
@@ -604,9 +663,16 @@ function confirmTransactionPIN(pin, onSuccess) {
       confirmPIN = String(confirmPIN || "").trim();
 
       if (!/^\d{4}$/.test(confirmPIN)) {
-        Notiflix.Notify.failure("Pin do not match. Please try again");
+        Notiflix.Notify.failure("Pin must be 4 digits");
         return;
       }
+
+      if (confirmPIN !== pin) {
+        Notiflix.Notify.failure("Pin does not match. Please try again.");
+        return;
+      }
+
+      localStorage.setItem("montanaTransactionPin", pin);
 
       transactionPin = pin;
 
@@ -633,10 +699,6 @@ function confirmTransactionPIN(pin, onSuccess) {
     },
   );
 }
-
-/* =====================================================
-   CONFIRM WITHDRAWAL
-===================================================== */
 
 /* =====================================================
    CONFIRM WITHDRAWAL
@@ -738,4 +800,15 @@ if (withdrawButton) {
 
     openWithdraw,
   );
+}
+
+/* SAVE BUTTON EVENT */
+const saveMoneyButton = document.getElementById("saveMoneyButton");
+
+if (saveMoneyButton) {
+  saveMoneyButton.addEventListener("click", function () {
+    console.log("Save button clicked");
+
+    window.location.href = "savings.html";
+  });
 }
