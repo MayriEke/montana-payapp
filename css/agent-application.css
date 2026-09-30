@@ -1,0 +1,740 @@
+/* ==========================================
+   AGENT APPLICATION
+========================================== */
+
+.agent-application-section {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 35px 20px 60px;
+  font-family: "Poppins", sans-serif;
+}
+
+.agent-application-wrapper {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.application-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.application-back {
+  text-decoration: none;
+  color: #1f2937;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.application-back:hover {
+  color: #3f8ae0;
+}
+
+.application-back i {
+  margin-right: 6px;
+}
+
+.application-logo {
+  font-size: 27px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.application-logo span {
+  color: #3f8ae0;
+}
+
+/* ==========================================
+   PROGRESS
+========================================== */
+
+.application-progress {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+}
+
+.progress-number {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e5e7eb;
+  color: #6b7280;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  margin-bottom: 7px;
+}
+
+.progress-step span {
+  font-size: 11px;
+  color: #9ca3af;
+  text-align: center;
+}
+
+.progress-step.active .progress-number {
+  background: #3f8ae0;
+  color: #ffffff;
+}
+
+.progress-step.active span {
+  color: #3f8ae0;
+  font-weight: 600;
+}
+
+.progress-line {
+  flex: 1;
+  height: 2px;
+  background: #e5e7eb;
+  margin: 17px 8px 0;
+}
+
+/* ==========================================
+   APPLICATION CARD
+========================================== */
+
+.agent-application-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================
+   APPLICATION STEPS
+========================================== */
+
+.application-step {
+  display: none;
+}
+
+.application-step.active {
+  display: block;
+}
+
+/* ==========================================
+   STEP HEADING
+========================================== */
+
+.step-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  margin-bottom: 30px;
+}
+
+.step-icon {
+  min-width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(249, 115, 22, 0.1);
+  color: #3f8ae0;
+
+  border-radius: 12px;
+
+  font-size: 22px;
+}
+
+.step-heading h1 {
+  margin: 0 0 6px;
+
+  color: #1f2937;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.step-heading p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   FORM
+========================================== */
+
+.form-label {
+  color: #374151;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+.form-control,
+.form-select {
+  min-height: 48px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+
+  color: #1f2937;
+
+  font-size: 13px;
+
+  box-shadow: none;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #3f8ae0;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.form-help-text {
+  font-size: 12px;
+}
+
+/* ==========================================
+   ACTIONS
+========================================== */
+
+.application-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 30px;
+}
+
+.application-next-btn {
+  min-width: 150px;
+
+  padding: 12px 20px;
+
+  background: #3f8ae0;
+  border: none;
+  border-radius: 9px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.application-next-btn:hover {
+  background: #3f8ae0;
+  color: #ffffff;
+}
+
+.application-next-btn i {
+  margin-left: 7px;
+}
+
+/* ==========================================
+   PLACEHOLDER
+========================================== */
+
+.step-placeholder {
+  padding: 35px;
+
+  background: #f9fafb;
+  border-radius: 12px;
+
+  color: #6b7280;
+
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+  .agent-application-section {
+    padding: 25px 15px 40px;
+  }
+
+  .agent-application-card {
+    padding: 25px 20px;
+    border-radius: 16px;
+  }
+
+  .application-progress {
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  .progress-step {
+    min-width: 62px;
+  }
+
+  .progress-step span {
+    font-size: 10px;
+  }
+
+  .progress-line {
+    min-width: 20px;
+  }
+
+  .step-heading h1 {
+    font-size: 20px;
+  }
+
+  .step-heading p {
+    font-size: 12px;
+  }
+
+  .application-actions {
+    justify-content: stretch;
+  }
+
+  .application-next-btn {
+    width: 100%;
+  }
+}
+
+/* STEP 3 - AGENT ID VERIFUCATION */
+/* ======================================
+   STEP 3 — IDENTITY VERIFICATION
+====================================== */
+
+.verification-section {
+  margin-top: 30px;
+  padding: 24px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+}
+
+.verification-section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.verification-number {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f97316;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.verification-section-heading h3 {
+  margin: 2px 0 5px;
+  color: #1f2937;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.verification-section-heading p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ======================================
+   DOCUMENT UPLOAD
+====================================== */
+
+.document-upload-box {
+  padding: 30px 20px;
+  text-align: center;
+  background: #ffffff;
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+}
+
+.document-upload-box > i {
+  font-size: 38px;
+  color: #f97316;
+}
+
+.document-upload-box h4 {
+  margin: 12px 0 7px;
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.document-upload-box p {
+  margin: 0 auto 18px;
+  max-width: 430px;
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ======================================
+   UPLOAD BUTTON
+====================================== */
+
+.upload-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  background: #f97316;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.upload-button:hover {
+  background: #ea580c;
+  color: #ffffff;
+}
+
+/* ======================================
+   UPLOADED FILE
+====================================== */
+
+.uploaded-file-info {
+  margin-top: 15px;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.uploaded-file-info.success {
+  color: #16a34a;
+}
+
+.uploaded-file-info i {
+  margin-right: 5px;
+}
+
+/* ======================================
+   SELFIE VERIFICATION
+====================================== */
+
+.selfie-verification-card {
+  padding: 30px 20px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.verification-camera-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff7ed;
+  color: #f97316;
+  border-radius: 50%;
+  font-size: 26px;
+}
+
+.selfie-verification-card h4 {
+  margin-bottom: 8px;
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.selfie-verification-card p {
+  max-width: 500px;
+  margin: 0 auto 15px;
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.verification-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 18px;
+  padding: 7px 12px;
+  background: #f3f4f6;
+  color: #6b7280;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.verification-status.verified {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+.verification-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 12px 18px;
+  background: #f97316;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.verification-button:hover {
+  background: #ea580c;
+}
+
+.verification-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.verification-note {
+  display: block;
+  max-width: 500px;
+  margin: 15px auto 0;
+  color: #9ca3af;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* ======================================
+   FULL BODY PHOTO
+====================================== */
+
+.full-body-photo-card {
+  padding: 30px 20px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.full-body-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff7ed;
+  color: #f97316;
+  border-radius: 50%;
+  font-size: 28px;
+}
+
+.full-body-photo-card h4 {
+  margin-bottom: 8px;
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.full-body-photo-card > p {
+  max-width: 520px;
+  margin: 0 auto 20px;
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ======================================
+   PHOTO GUIDELINES
+====================================== */
+
+.photo-guidelines {
+  max-width: 400px;
+  margin: 0 auto 20px;
+  text-align: left;
+}
+
+.photo-guidelines div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: #4b5563;
+  font-size: 12px;
+}
+
+.photo-guidelines i {
+  color: #16a34a;
+}
+
+/* ======================================
+   FULL BODY PREVIEW
+====================================== */
+
+.full-body-preview {
+  display: none;
+  max-width: 220px;
+  margin: 20px auto 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.full-body-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ======================================
+   STEP 3 ACTIONS
+====================================== */
+
+.step-three-actions {
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 576px) {
+  .verification-section {
+    padding: 18px;
+  }
+
+  .verification-section-heading h3 {
+    font-size: 15px;
+  }
+
+  .document-upload-box,
+  .selfie-verification-card,
+  .full-body-photo-card {
+    padding: 24px 15px;
+  }
+}
+
+/* Agent Settlement - Step 4 */
+/* ======================================
+   STEP 4 — SETTLEMENT
+====================================== */
+
+.settlement-section {
+  margin-top: 25px;
+  padding: 24px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+}
+
+.settlement-section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.settlement-number {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f97316;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.settlement-section-heading h3 {
+  margin: 2px 0 5px;
+  color: #1f2937;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.settlement-section-heading p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ======================================
+   ACCOUNT CONFIRMATION
+====================================== */
+
+.settlement-confirmation {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.settlement-confirmation input {
+  width: 17px;
+  height: 17px;
+  margin-top: 2px;
+  accent-color: #f97316;
+  cursor: pointer;
+}
+
+.settlement-confirmation label {
+  color: #4b5563;
+  font-size: 12px;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+/* ======================================
+   STEP 4 ACTIONS
+====================================== */
+
+.step-four-actions {
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 576px) {
+  .settlement-section {
+    padding: 18px;
+  }
+
+  .settlement-section-heading h3 {
+    font-size: 15px;
+  }
+}

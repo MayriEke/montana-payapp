@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Agent Application | MontanaPay</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Agent Application CSS -->
+    <link rel="stylesheet" href="CSS/agent-application.css" />
+  </head>
+
+  <body>
+    <section class="agent-application-section">
+      <div class="container">
+        <div class="agent-application-wrapper">
+          <!-- ==============================
+             HEADER
+        =============================== -->
+
+          <div class="application-header">
+            <a href="agent-onboarding.html" class="application-back">
+              <i class="bi bi-arrow-left"></i>
+              Back
+            </a>
+
+            <div class="application-logo">Montana<span>Pay</span></div>
+          </div>
+
+          <!-- ==============================
+             PROGRESS
+        =============================== -->
+
+          <div class="application-progress">
+            <div class="progress-step active">
+              <div class="progress-number">1</div>
+              <span>Personal</span>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+              <div class="progress-number">2</div>
+              <span>Address</span>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+              <div class="progress-number">3</div>
+              <span>Identity</span>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+              <div class="progress-number">4</div>
+              <span>Settlement</span>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+              <div class="progress-number">5</div>
+              <span>Review</span>
+            </div>
+          </div>
+
+          <!-- ==============================
+             APPLICATION CARD
+        =============================== -->
+
+          <div class="agent-application-card">
+            <!-- ==================================
+               STEP 1 - PERSONAL INFORMATION
+          =================================== -->
+
+            <div class="application-step active" id="applicationStep1">
+              <div class="step-heading">
+                <div class="step-icon">
+                  <i class="bi bi-person"></i>
+                </div>
+
+                <div>
+                  <h1>Personal Information</h1>
+
+                  <p>
+                    Confirm your personal information to continue with your
+                    agent application.
+                  </p>
+                </div>
+              </div>
+
+              <!-- First Name -->
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="agentFirstName" class="form-label">
+                    First Name
+                  </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="agentFirstName"
+                    placeholder="Enter first name"
+                  />
+                </div>
+
+                <!-- Last Name -->
+
+                <div class="col-md-6 mb-3">
+                  <label for="agentLastName" class="form-label">
+                    Last Name
+                  </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="agentLastName"
+                    placeholder="Enter last name"
+                  />
+                </div>
+              </div>
+
+              <!-- Email -->
+
+              <div class="mb-3">
+                <label for="agentEmail" class="form-label">
+                  Email Address
+                </label>
+
+                <input
+                  type="email"
+                  class="form-control"
+                  id="agentEmail"
+                  placeholder="Enter email address"
+                />
+              </div>
+
+              <!-- Phone -->
+
+              <div class="mb-3">
+                <label for="agentPhone" class="form-label">
+                  Phone Number
+                </label>
+
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="agentPhone"
+                  placeholder="Enter phone number"
+                />
+              </div>
+
+              <!-- Date of Birth -->
+
+              <div class="mb-3">
+                <label for="agentDateOfBirth" class="form-label">
+                  Date of Birth
+                </label>
+
+                <input type="date" class="form-control" id="agentDateOfBirth" />
+              </div>
+
+              <!-- Gender -->
+
+              <div class="mb-3">
+                <label for="agentGender" class="form-label"> Gender </label>
+
+                <select class="form-select" id="agentGender">
+                  <option value="">Select gender</option>
+
+                  <option value="male">Male</option>
+
+                  <option value="female">Female</option>
+
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <!-- Continue -->
+
+              <div class="application-actions">
+                <button
+                  type="button"
+                  class="btn application-next-btn"
+                  id="step1Continue"
+                >
+                  Continue
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Agent Address and  Location -->
+            <div class="application-step" id="applicationStep2">
+              <div class="step-heading">
+                <div class="step-icon">
+                  <i class="bi bi-geo-alt"></i>
+                </div>
+
+                <div>
+                  <h2>Address & Agent Information</h2>
+                  <p>
+                    Tell us where you live and where you intend to operate as a
+                    MontanaPay Field Agent.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Residential Address -->
+              <div class="mb-3">
+                <label for="agentResidentialAddress" class="form-label">
+                  Residential Address
+                </label>
+
+                <textarea
+                  class="form-control"
+                  id="agentResidentialAddress"
+                  rows="3"
+                  placeholder="Enter your full residential address"
+                ></textarea>
+              </div>
+
+              <!-- State -->
+              <div class="mb-3">
+                <label for="agentState" class="form-label"> State </label>
+
+                <select class="form-select" id="agentState">
+                  <option value="">Select your state</option>
+
+                  <option value="Abia">Abia</option>
+                  <option value="Adamawa">Adamawa</option>
+                  <option value="Akwa Ibom">Akwa Ibom</option>
+                  <option value="Anambra">Anambra</option>
+                  <option value="Bauchi">Bauchi</option>
+                  <option value="Bayelsa">Bayelsa</option>
+                  <option value="Benue">Benue</option>
+                  <option value="Borno">Borno</option>
+                  <option value="Cross River">Cross River</option>
+                  <option value="Delta">Delta</option>
+                  <option value="Ebonyi">Ebonyi</option>
+                  <option value="Edo">Edo</option>
+                  <option value="Ekiti">Ekiti</option>
+                  <option value="Enugu">Enugu</option>
+                  <option value="Gombe">Gombe</option>
+                  <option value="Imo">Imo</option>
+                  <option value="Jigawa">Jigawa</option>
+                  <option value="Kaduna">Kaduna</option>
+                  <option value="Kano">Kano</option>
+                  <option value="Katsina">Katsina</option>
+                  <option value="Kebbi">Kebbi</option>
+                  <option value="Kogi">Kogi</option>
+                  <option value="Kwara">Kwara</option>
+                  <option value="Lagos">Lagos</option>
+                  <option value="Nasarawa">Nasarawa</option>
+                  <option value="Niger">Niger</option>
+                  <option value="Ogun">Ogun</option>
+                  <option value="Ondo">Ondo</option>
+                  <option value="Osun">Osun</option>
+                  <option value="Oyo">Oyo</option>
+                  <option value="Plateau">Plateau</option>
+                  <option value="Rivers">Rivers</option>
+                  <option value="Sokoto">Sokoto</option>
+                  <option value="Taraba">Taraba</option>
+                  <option value="Yobe">Yobe</option>
+                  <option value="Zamfara">Zamfara</option>
+                  <option value="FCT">Federal Capital Territory</option>
+                </select>
+              </div>
+
+              <!-- LGA -->
+              <div class="mb-3">
+                <label for="agentLga" class="form-label">
+                  Local Government Area (LGA)
+                </label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="agentLga"
+                  placeholder="Enter your LGA"
+                />
+              </div>
+
+              <!-- City / Town -->
+              <div class="mb-3">
+                <label for="agentCity" class="form-label"> City / Town </label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="agentCity"
+                  placeholder="Enter your city or town"
+                />
+              </div>
+
+              <!-- Operating Location -->
+              <div class="mb-3">
+                <label for="agentOperatingLocation" class="form-label">
+                  Proposed Operating Location
+                </label>
+
+                <textarea
+                  class="form-control"
+                  id="agentOperatingLocation"
+                  rows="3"
+                  placeholder="Where do you intend to operate as a MontanaPay Field Agent?"
+                ></textarea>
+
+                <div class="form-help-text">
+                  This is the area where you plan to meet customers and carry
+                  out MontanaPay agent activities.
+                </div>
+              </div>
+
+              <!-- Current Occupation -->
+              <div class="mb-3">
+                <label for="agentOccupation" class="form-label">
+                  Current Occupation
+                </label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="agentOccupation"
+                  placeholder="e.g. Trader, Business Owner, Student, Self-employed"
+                />
+              </div>
+
+              <!-- Actions -->
+              <div class="application-actions step-two-actions">
+                <button
+                  type="button"
+                  class="application-back-btn"
+                  id="step2Back"
+                >
+                  <i class="bi bi-arrow-left"></i>
+                  Back
+                </button>
+
+                <button
+                  type="button"
+                  class="application-next-btn"
+                  id="step2Continue"
+                >
+                  Continue
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- ==================================
+               STEP 3 - identity Verification
+          =================================== -->
+            <div class="application-step" id="applicationStep3">
+              <div class="step-heading">
+                <div class="step-icon">
+                  <i class="bi bi-person-vcard"></i>
+                </div>
+
+                <div>
+                  <h2>Identity Verification</h2>
+                  <p>
+                    Verify your identity to continue with your MontanaPay Field
+                    Agent application.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ==========================
+                  GOVERNMENT ID
+              =========================== -->
+
+              <div class="verification-section">
+                <div class="verification-section-heading">
+                  <div class="verification-number">1</div>
+
+                  <div>
+                    <h3>Government-issued ID</h3>
+                    <p>Provide a valid identification document.</p>
+                  </div>
+                </div>
+
+                <!-- ID Type -->
+
+                <div class="mb-3">
+                  <label for="agentIdType" class="form-label"> ID Type </label>
+
+                  <select class="form-select" id="agentIdType">
+                    <option value="">Select ID type</option>
+                    <option value="nin">
+                      National Identification Number (NIN)
+                    </option>
+                    <option value="drivers_license">Driver's License</option>
+                    <option value="international_passport">
+                      International Passport
+                    </option>
+                    <option value="voters_card">Voter's Card</option>
+                  </select>
+                </div>
+
+                <!-- ID Number -->
+
+                <div class="mb-3">
+                  <label for="agentIdNumber" class="form-label">
+                    ID Number
+                  </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="agentIdNumber"
+                    placeholder="Enter your identification number"
+                  />
+                </div>
+
+                <!-- ID Document -->
+
+                <div class="mb-3">
+                  <label for="agentIdDocument" class="form-label">
+                    Upload ID Document
+                  </label>
+
+                  <div class="document-upload-box">
+                    <i class="bi bi-cloud-arrow-up"></i>
+
+                    <h4>Upload your ID</h4>
+
+                    <p>
+                      Upload a clear image or PDF of your identification
+                      document.
+                    </p>
+
+                    <label for="agentIdDocument" class="upload-button">
+                      <i class="bi bi-upload"></i>
+                      Choose Document
+                    </label>
+
+                    <input
+                      type="file"
+                      id="agentIdDocument"
+                      accept="image/*,.pdf"
+                      hidden
+                    />
+
+                    <div
+                      class="uploaded-file-info"
+                      id="agentIdDocumentInfo"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ==========================
+                  LIVE SELFIE
+              =========================== -->
+
+              <div class="verification-section">
+                <div class="verification-section-heading">
+                  <div class="verification-number">2</div>
+
+                  <div>
+                    <h3>Live Selfie Verification</h3>
+                    <p>
+                      Complete a live selfie check to confirm that you are the
+                      person submitting this application.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="selfie-verification-card">
+                  <div class="verification-camera-icon">
+                    <i class="bi bi-camera"></i>
+                  </div>
+
+                  <h4>Live Selfie Check</h4>
+
+                  <p>
+                    Position your face clearly in front of the camera and follow
+                    the instructions during verification.
+                  </p>
+
+                  <div
+                    class="verification-status"
+                    id="selfieVerificationStatus"
+                  >
+                    <i class="bi bi-circle"></i>
+                    Not verified
+                  </div>
+
+                  <button
+                    type="button"
+                    class="verification-button"
+                    id="startSelfieVerification"
+                  >
+                    <i class="bi bi-camera"></i>
+                    Start Live Selfie Check
+                  </button>
+
+                  <small class="verification-note">
+                    Frontend prototype: live verification will be connected to a
+                    KYC/liveness provider during backend integration.
+                  </small>
+                </div>
+              </div>
+
+              <!-- ==========================
+                  FULL BODY PHOTO
+              =========================== -->
+
+              <div class="verification-section">
+                <div class="verification-section-heading">
+                  <div class="verification-number">3</div>
+
+                  <div>
+                    <h3>Full-Body Photograph</h3>
+                    <p>
+                      Provide a clear full-length photograph showing you from
+                      head to toe.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="full-body-photo-card">
+                  <div class="full-body-icon">
+                    <i class="bi bi-person-standing"></i>
+                  </div>
+
+                  <h4>Full-Length Photo</h4>
+
+                  <p>
+                    Stand upright and make sure your entire body, from your head
+                    to your feet, is visible in the photograph.
+                  </p>
+
+                  <div class="photo-guidelines">
+                    <div>
+                      <i class="bi bi-check-circle"></i>
+                      Face the camera directly
+                    </div>
+
+                    <div>
+                      <i class="bi bi-check-circle"></i>
+                      Make sure your full body is visible
+                    </div>
+
+                    <div>
+                      <i class="bi bi-check-circle"></i>
+                      Use good lighting
+                    </div>
+
+                    <div>
+                      <i class="bi bi-check-circle"></i>
+                      Avoid blurry photographs
+                    </div>
+                  </div>
+
+                  <label
+                    for="agentFullBodyPhoto"
+                    class="upload-button full-body-upload-button"
+                  >
+                    <i class="bi bi-camera"></i>
+                    Take / Upload Full-Body Photo
+                  </label>
+
+                  <input
+                    type="file"
+                    id="agentFullBodyPhoto"
+                    accept="image/*"
+                    capture="environment"
+                    hidden
+                  />
+
+                  <div
+                    class="full-body-preview"
+                    id="fullBodyPhotoPreview"
+                  ></div>
+
+                  <div class="uploaded-file-info" id="fullBodyPhotoInfo"></div>
+                </div>
+              </div>
+
+              <!-- ==========================
+                  ACTIONS
+              =========================== -->
+
+              <div class="application-actions step-three-actions">
+                <button
+                  type="button"
+                  class="application-back-btn"
+                  id="step3Back"
+                >
+                  <i class="bi bi-arrow-left"></i>
+                  Back
+                </button>
+
+                <button
+                  type="button"
+                  class="application-next-btn"
+                  id="step3Continue"
+                >
+                  Continue
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- ==================================
+               STEP 4
+          =================================== -->
+
+            <div class="application-step" id="applicationStep4">
+              <div class="step-heading">
+                <div class="step-icon">
+                  <i class="bi bi-bank"></i>
+                </div>
+
+                <div>
+                  <h2>Settlement Information</h2>
+                  <p>
+                    Provide the bank account where your MontanaPay agent
+                    earnings and settlements can be paid.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ==========================
+                  BANK INFORMATION
+              =========================== -->
+
+              <div class="settlement-section">
+                <div class="settlement-section-heading">
+                  <div class="settlement-number">1</div>
+
+                  <div>
+                    <h3>Bank Account Details</h3>
+                    <p>Use an active bank account registered in your name.</p>
+                  </div>
+                </div>
+
+                <!-- Bank Name -->
+
+                <div class="mb-3">
+                  <label for="agentBankName" class="form-label">
+                    Bank Name
+                  </label>
+
+                  <select class="form-select" id="agentBankName">
+                    <option value="">Select your bank</option>
+
+                    <option value="access">Access Bank</option>
+                    <option value="citibank">Citibank Nigeria</option>
+                    <option value="ecobank">Ecobank</option>
+                    <option value="fcmb">FCMB</option>
+                    <option value="fidelity">Fidelity Bank</option>
+                    <option value="firstbank">First Bank</option>
+                    <option value="globus">Globus Bank</option>
+                    <option value="gtbank">GTBank</option>
+                    <option value="heritage">Heritage Bank</option>
+                    <option value="jaiz">Jaiz Bank</option>
+                    <option value="keystone">Keystone Bank</option>
+                    <option value="kuda">Kuda Bank</option>
+                    <option value="moniepoint">Moniepoint</option>
+                    <option value="opay">OPay</option>
+                    <option value="palmpay">PalmPay</option>
+                    <option value="polaris">Polaris Bank</option>
+                    <option value="providus">Providus Bank</option>
+                    <option value="stanbic">Stanbic IBTC</option>
+                    <option value="standard_chartered">
+                      Standard Chartered
+                    </option>
+                    <option value="sterling">Sterling Bank</option>
+                    <option value="suntrust">SunTrust Bank</option>
+                    <option value="titan">Titan Trust Bank</option>
+                    <option value="uba">UBA</option>
+                    <option value="union">Union Bank</option>
+                    <option value="unity">Unity Bank</option>
+                    <option value="wema">Wema Bank</option>
+                    <option value="zenith">Zenith Bank</option>
+                  </select>
+                </div>
+
+                <!-- Account Number -->
+
+                <div class="mb-3">
+                  <label for="agentAccountNumber" class="form-label">
+                    Account Number
+                  </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="agentAccountNumber"
+                    inputmode="numeric"
+                    maxlength="10"
+                    placeholder="Enter your 10-digit account number"
+                  />
+                </div>
+
+                <!-- Account Name -->
+
+                <div class="mb-3">
+                  <label for="agentAccountName" class="form-label">
+                    Account Name
+                  </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="agentAccountName"
+                    placeholder="Enter the name on your bank account"
+                  />
+
+                  <div class="form-help-text">
+                    The account name should match the identity information you
+                    provide during verification.
+                  </div>
+                </div>
+              </div>
+
+              <!-- ==========================
+                  SETTLEMENT FREQUENCY
+              =========================== -->
+
+              <div class="settlement-section">
+                <div class="settlement-section-heading">
+                  <div class="settlement-number">2</div>
+
+                  <div>
+                    <h3>Settlement Preference</h3>
+                    <p>
+                      Select how you would prefer your eligible agent earnings
+                      to be settled.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="agentSettlementFrequency" class="form-label">
+                    Preferred Settlement Frequency
+                  </label>
+
+                  <select class="form-select" id="agentSettlementFrequency">
+                    <option value="">Select settlement frequency</option>
+
+                    <option value="daily">Daily</option>
+
+                    <option value="weekly">Weekly</option>
+
+                    <option value="monthly">Monthly</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- ==========================
+                  ACCOUNT OWNERSHIP
+              =========================== -->
+
+              <div class="settlement-section">
+                <div class="settlement-confirmation">
+                  <input type="checkbox" id="agentSettlementConfirmation" />
+
+                  <label for="agentSettlementConfirmation">
+                    I confirm that the bank account provided belongs to me and
+                    that the information provided is accurate.
+                  </label>
+                </div>
+              </div>
+
+              <!-- ==========================
+                  ACTIONS
+              =========================== -->
+
+              <div class="application-actions step-four-actions">
+                <button
+                  type="button"
+                  class="application-back-btn"
+                  id="step4Back"
+                >
+                  <i class="bi bi-arrow-left"></i>
+                  Back
+                </button>
+
+                <button
+                  type="button"
+                  class="application-next-btn"
+                  id="step4Continue"
+                >
+                  Continue
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- ==================================
+               STEP 5
+          =================================== -->
+
+            <div class="application-step" id="applicationStep5">
+              <div class="step-heading">
+                <div class="step-icon">
+                  <i class="bi bi-clipboard-check"></i>
+                </div>
+
+                <div>
+                  <h1>Review Application</h1>
+
+                  <p>
+                    Review your information before submitting your agent
+                    application.
+                  </p>
+                </div>
+              </div>
+
+              <p class="step-placeholder">
+                Final review will be built after the other application steps are
+                completed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notiflix -->
+    <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.7/dist/notiflix-aio-3.2.7.min.js"></script>
+
+    <!-- Agent Application JS -->
+    <script src="JS/agent-application.js"></script>
+  </body>
+</html>

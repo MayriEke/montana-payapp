@@ -1,0 +1,303 @@
+/* ==========================================
+   AGENT ONBOARDING PAGE
+========================================== */
+
+.agent-onboarding-section {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.agent-onboarding-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   BACK LINK
+========================================== */
+
+.agent-back-link {
+  margin-bottom: 25px;
+}
+
+.agent-back-link a {
+  text-decoration: none;
+  color: #1f2937;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.agent-back-link a:hover {
+  color: #3f8ae0;
+}
+
+.agent-back-link i {
+  margin-right: 6px;
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.agent-onboarding-logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.agent-onboarding-logo a {
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.agent-onboarding-logo span {
+  color: #3f8ae0;
+}
+
+/* ==========================================
+   MAIN CARD
+========================================== */
+
+.agent-onboarding-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 45px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.agent-onboarding-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(63, 138, 224, 0.15);
+  color: #3f8ae0;
+
+  border-radius: 50%;
+
+  font-size: 32px;
+}
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.agent-onboarding-card h1 {
+  text-align: center;
+  color: #1f2937;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.agent-onboarding-intro {
+  max-width: 600px;
+  margin: 0 auto 35px;
+
+  text-align: center;
+
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   BENEFITS
+========================================== */
+
+.agent-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.agent-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  padding: 18px;
+
+  background: #f9fafb;
+  border-radius: 14px;
+}
+
+.benefit-icon {
+  min-width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(63, 138, 224, 0.15);
+  color: #3f8ae0;
+
+  border-radius: 10px;
+
+  font-size: 21px;
+}
+
+.agent-benefit h5 {
+  margin: 0 0 5px;
+
+  color: #1f2937;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.agent-benefit p {
+  margin: 0;
+
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   ACCOUNT NOTICE
+========================================== */
+
+.agent-account-notice {
+  display: flex;
+  gap: 12px;
+
+  padding: 18px;
+
+  margin-bottom: 25px;
+
+  background: rgba(63, 138, 224, 0.15);
+  border: 1px solid #64748b;
+
+  border-radius: 12px;
+}
+
+.agent-account-notice > i {
+  color: #3f8ae0;
+  font-size: 20px;
+}
+
+.agent-account-notice strong {
+  color: #1f2937;
+  font-size: 14px;
+}
+
+.agent-account-notice p {
+  margin: 5px 0 0;
+
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   START APPLICATION BUTTON
+========================================== */
+
+.agent-start-btn {
+  width: 100%;
+
+  padding: 14px 20px;
+
+  background: #3f8ae0;
+  border: none;
+  border-radius: 10px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+.agent-start-btn:hover {
+  background: #3f8ae0;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.agent-start-btn i {
+  margin-left: 8px;
+}
+
+/* ==========================================
+   LOGIN NOTE
+========================================== */
+
+.agent-login-note {
+  margin: 20px 0 0;
+
+  text-align: center;
+
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.agent-login-note a {
+  color: #081c2e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.agent-login-note a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.agent-onboarding-footer {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.agent-onboarding-footer p {
+  margin: 0;
+
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 576px) {
+  .agent-onboarding-section {
+    padding: 25px 15px;
+  }
+
+  .agent-onboarding-card {
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  .agent-onboarding-card h1 {
+    font-size: 24px;
+  }
+
+  .agent-onboarding-intro {
+    font-size: 14px;
+  }
+
+  .agent-benefit {
+    padding: 15px;
+  }
+
+  .agent-onboarding-logo a {
+    font-size: 26px;
+  }
+}
