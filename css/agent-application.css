@@ -339,7 +339,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f97316;
+  background: #3f8ae0;
   color: #ffffff;
   border-radius: 50%;
   font-size: 14px;
@@ -374,7 +374,7 @@
 
 .document-upload-box > i {
   font-size: 38px;
-  color: #f97316;
+  color: #3f8ae0;
 }
 
 .document-upload-box h4 {
@@ -402,7 +402,7 @@
   justify-content: center;
   gap: 8px;
   padding: 11px 18px;
-  background: #f97316;
+  background: #3f8ae0;
   color: #ffffff;
   border-radius: 8px;
   font-size: 13px;
@@ -412,7 +412,7 @@
 }
 
 .upload-button:hover {
-  background: #ea580c;
+  background: #3f8ae0;
   color: #ffffff;
 }
 
@@ -455,7 +455,7 @@
   align-items: center;
   justify-content: center;
   background: #fff7ed;
-  color: #f97316;
+  color: #3f8ae0;
   border-radius: 50%;
   font-size: 26px;
 }
@@ -502,7 +502,7 @@
   max-width: 300px;
   margin: 0 auto;
   padding: 12px 18px;
-  background: #f97316;
+  background: #3f8ae0;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -513,7 +513,7 @@
 }
 
 .verification-button:hover {
-  background: #ea580c;
+  background: #3f8ae0;
 }
 
 .verification-button:disabled {
@@ -550,7 +550,7 @@
   align-items: center;
   justify-content: center;
   background: #fff7ed;
-  color: #f97316;
+  color: #3f8ae0;
   border-radius: 50%;
   font-size: 28px;
 }
@@ -669,7 +669,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f97316;
+  background: #3f8ae0;
   color: #ffffff;
   border-radius: 50%;
   font-size: 14px;
@@ -704,7 +704,7 @@
   width: 17px;
   height: 17px;
   margin-top: 2px;
-  accent-color: #f97316;
+  accent-color: #3f8ae0;
   cursor: pointer;
 }
 
@@ -737,4 +737,331 @@
   .settlement-section-heading h3 {
     font-size: 15px;
   }
+}
+
+/* ==========================================
+   STEP 5 — REVIEW & SUBMIT
+========================================== */
+
+#applicationStep5 {
+  width: 100%;
+}
+
+.review-section {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.review-section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.review-section-header h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.review-section-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.review-edit-btn {
+  border: none;
+  background: #fff7ed;
+  color: #3f8ae0;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+.review-edit-btn:hover {
+  background: #3f8ae0;
+  color: #ffffff;
+}
+
+.review-edit-btn i {
+  margin-right: 5px;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 24px;
+}
+
+.review-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.review-item-full {
+  grid-column: 1 / -1;
+}
+
+.review-label {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.review-item strong {
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.review-status-success {
+  color: #16a34a !important;
+}
+
+.review-status-success i {
+  margin-right: 4px;
+}
+
+/* ==========================================
+   DECLARATION
+========================================== */
+
+.review-declaration {
+  background: #bfe1f5;
+  border: 1px solid #aad1fe;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+}
+
+.review-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.review-checkbox input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid #d1d5db;
+  border-radius: 5px;
+  background: #ffffff;
+  margin-top: 1px;
+  position: relative;
+  transition: 0.2s ease;
+}
+
+.review-checkbox input:checked + .custom-checkbox {
+  background: #3f8ae0;
+  border-color: #3f8ae0;
+}
+
+.review-checkbox input:checked + .custom-checkbox::after {
+  content: "✓";
+  position: absolute;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  left: 3px;
+  top: -1px;
+}
+
+.review-declaration-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.review-declaration-error {
+  color: #3f8ae0;
+  font-size: 12px;
+  margin-top: 8px;
+  margin-left: 32px;
+}
+
+/* ==========================================
+   STEP 5 ACTIONS
+========================================== */
+
+#applicationStep5 .application-step-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+#applicationStep5 .btn-primary,
+#applicationStep5 .btn-secondary {
+  min-height: 46px;
+  padding: 0 22px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+#applicationStep5 .btn-primary {
+  background: #3f8ae0;
+  color: #ffffff;
+  border: 1px solid #3f8ae0;
+}
+
+#applicationStep5 .btn-primary:hover {
+  background: #3f8ae0;
+  border-color: #3f8ae0;
+}
+
+#applicationStep5 .btn-secondary {
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+#applicationStep5 .btn-secondary:hover {
+  background: #f9fafb;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .review-section {
+    padding: 18px;
+  }
+
+  .review-section-header {
+    align-items: flex-start;
+  }
+
+  .review-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .review-item-full {
+    grid-column: auto;
+  }
+
+  #applicationStep5 .application-step-actions {
+    flex-direction: column-reverse;
+  }
+
+  #applicationStep5 .btn-primary,
+  #applicationStep5 .btn-secondary {
+    width: 100%;
+  }
+}
+
+/* ======================================
+   APPLICATION SUBMITTED
+====================================== */
+
+.submission-success-container {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 40px 25px;
+  text-align: center;
+}
+
+.submission-success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.12);
+  color: #3f8ae0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+}
+
+.submission-success-container h1 {
+  margin-bottom: 12px;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.submission-success-message {
+  max-width: 520px;
+  margin: 0 auto 30px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.application-reference-box,
+.application-status-box {
+  padding: 18px 20px;
+  margin-bottom: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.reference-label,
+.status-label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.application-reference-box strong {
+  color: #1f2937;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.application-status-box strong {
+  color: #3f8ae0;
+  font-size: 16px;
+}
+
+.application-status-box i {
+  margin-right: 5px;
+}
+
+.submission-note {
+  margin: 25px auto;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.submission-actions {
+  margin-top: 25px;
+}
+
+#returnToDashboard {
+  min-width: 200px;
+  background: #3f8ae0;
+  border-color: #3f8ae0;
+}
+
+#returnToDashboard:hover {
+  background: #2a6fc0;
+  border-color: #2a6fc0;
 }

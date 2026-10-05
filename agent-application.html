@@ -815,7 +815,6 @@
             <!-- ==================================
                STEP 5
           =================================== -->
-
             <div class="application-step" id="applicationStep5">
               <div class="step-heading">
                 <div class="step-icon">
@@ -832,10 +831,311 @@
                 </div>
               </div>
 
-              <p class="step-placeholder">
-                Final review will be built after the other application steps are
-                completed.
-              </p>
+              <!-- ==========================================
+                  PERSONAL INFORMATION
+              =========================================== -->
+
+              <div class="review-section">
+                <div class="review-section-header">
+                  <div>
+                    <h3>Personal Information</h3>
+
+                    <p>
+                      Your personal information from your Montana PayApp
+                      account.
+                    </p>
+                  </div>
+
+                  <button type="button" class="review-edit-btn" id="editStep1">
+                    <i class="bi bi-pencil"></i>
+                    Edit
+                  </button>
+                </div>
+
+                <div class="review-grid">
+                  <div class="review-item">
+                    <span class="review-label">First Name</span>
+                    <strong id="reviewFirstName">—</strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label">Last Name</span>
+                    <strong id="reviewLastName">—</strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label">Email Address</span>
+                    <strong id="reviewEmail">—</strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label">Phone Number</span>
+                    <strong id="reviewPhone">—</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ==========================================
+                  ADDRESS & AGENT INFORMATION
+              =========================================== -->
+
+              <div class="review-section">
+                <div class="review-section-header">
+                  <div>
+                    <h3>Address & Agent Information</h3>
+
+                    <p>Your residential and proposed operating information.</p>
+                  </div>
+
+                  <button type="button" class="review-edit-btn" id="editStep2">
+                    <i class="bi bi-pencil"></i>
+                    Edit
+                  </button>
+                </div>
+
+                <div class="review-grid">
+                  <div class="review-item review-item-full">
+                    <span class="review-label"> Residential Address </span>
+
+                    <strong id="reviewResidentialAddress">—</strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label">State</span>
+                    <strong id="reviewState">—</strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label">LGA</span>
+                    <strong id="reviewLga">—</strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label">City / Town</span>
+                    <strong id="reviewCity">—</strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label">
+                      Proposed Operating Location
+                    </span>
+
+                    <strong id="reviewOperatingLocation">—</strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label"> Current Occupation </span>
+
+                    <strong id="reviewOccupation">—</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ==========================================
+                  IDENTITY VERIFICATION
+              =========================================== -->
+
+              <div class="review-section">
+                <div class="review-section-header">
+                  <div>
+                    <h3>Identity Verification</h3>
+
+                    <p>Identity documents and verification status.</p>
+                  </div>
+
+                  <button type="button" class="review-edit-btn" id="editStep3">
+                    <i class="bi bi-pencil"></i>
+                    Edit
+                  </button>
+                </div>
+
+                <div class="review-grid">
+                  <div class="review-item">
+                    <span class="review-label">ID Type</span>
+                    <strong id="reviewIdType">—</strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label">ID Number</span>
+                    <strong id="reviewIdNumber">—</strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label">ID Document</span>
+                    <strong id="reviewIdDocument">—</strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label">Live Selfie</span>
+
+                    <strong
+                      class="review-status-success"
+                      id="reviewSelfieStatus"
+                    >
+                      —
+                    </strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label">Full-body Photo</span>
+
+                    <strong id="reviewFullBodyPhoto"> — </strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label"> Identity Verification </span>
+
+                    <strong
+                      class="review-status-success"
+                      id="reviewIdentityStatus"
+                    >
+                      —
+                    </strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ==========================================
+                  SETTLEMENT INFORMATION
+              =========================================== -->
+
+              <div class="review-section">
+                <div class="review-section-header">
+                  <div>
+                    <h3>Settlement Information</h3>
+
+                    <p>Bank account information for agent settlements.</p>
+                  </div>
+
+                  <button type="button" class="review-edit-btn" id="editStep4">
+                    <i class="bi bi-pencil"></i>
+                    Edit
+                  </button>
+                </div>
+
+                <div class="review-grid">
+                  <div class="review-item">
+                    <span class="review-label">Bank</span>
+                    <strong id="reviewBankName">—</strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label">Account Name</span>
+                    <strong id="reviewAccountName">—</strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label">Account Number</span>
+                    <strong id="reviewAccountNumber">—</strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label"> Settlement Frequency </span>
+
+                    <strong id="reviewSettlementFrequency"> — </strong>
+                  </div>
+
+                  <div class="review-item">
+                    <span class="review-label"> Account Confirmation </span>
+
+                    <strong class="review-status-success">
+                      <i class="bi bi-check-circle-fill"></i>
+                      Confirmed
+                    </strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ==========================================
+                  DECLARATION
+              =========================================== -->
+
+              <div class="review-declaration">
+                <label class="review-checkbox">
+                  <input type="checkbox" id="agentApplicationDeclaration" />
+
+                  <span class="custom-checkbox"></span>
+
+                  <span class="review-declaration-text">
+                    I confirm that the information I have provided is accurate
+                    and complete to the best of my knowledge. I understand that
+                    Montana PayApp may review and verify the information and
+                    documents submitted as part of my agent application.
+                  </span>
+                </label>
+
+                <div
+                  class="review-declaration-error"
+                  id="agentApplicationDeclarationError"
+                ></div>
+              </div>
+
+              <!-- ==========================================
+                  ACTION BUTTONS
+              =========================================== -->
+
+              <div class="application-step-actions">
+                <button type="button" class="btn-secondary" id="step5Back">
+                  <i class="bi bi-arrow-left"></i>
+                  Back
+                </button>
+
+                <button
+                  type="button"
+                  class="btn-primary"
+                  id="submitAgentApplication"
+                >
+                  Submit Application
+                  <i class="bi bi-check-lg"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- APPLICATION SUBMISSION CONFIRMATION -->
+            <div class="application-step" id="applicationSubmittedStep">
+              <div class="submission-success-container">
+                <div class="submission-success-icon">
+                  <i class="bi bi-check-lg"></i>
+                </div>
+
+                <h1>Application Submitted</h1>
+
+                <p class="submission-success-message">
+                  Your Montana PayApp Agent application has been submitted
+                  successfully and is currently under review.
+                </p>
+
+                <div class="application-reference-box">
+                  <span class="reference-label"> Application Reference </span>
+
+                  <strong id="submittedApplicationReference"> — </strong>
+                </div>
+
+                <div class="application-status-box">
+                  <span class="status-label"> Application Status </span>
+
+                  <strong>
+                    <i class="bi bi-clock-history"></i>
+                    Pending Review
+                  </strong>
+                </div>
+
+                <p class="submission-note">
+                  Please keep your application reference for future
+                  communication regarding your agent application.
+                </p>
+
+                <div class="submission-actions">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="returnToDashboard"
+                  >
+                    <i class="bi bi-house"></i>
+                    Return to Dashboard
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
