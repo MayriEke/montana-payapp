@@ -1,0 +1,989 @@
+/* ROOT VARIABLES */
+
+:root {
+  /* Admin Brand */
+  --admin-red: #d62828;
+  --admin-red-dark: #b71c1c;
+  --admin-red-light: #fde8e8;
+
+  /* Navy */
+  --admin-navy: #0f2747;
+  --admin-navy-dark: #091b33;
+  --admin-navy-light: #eaf0f7;
+
+  /* General */
+  --admin-white: #ffffff;
+  --admin-bg: #f6f7f9;
+  --admin-border: #e5e7eb;
+
+  /* Text */
+  --admin-text: #1f2937;
+  --admin-text-light: #6b7280;
+  --admin-muted: #9ca3af;
+
+  /* Status */
+  --success: #16803c;
+  --warning: #d97706;
+  --danger: #dc2626;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(15, 39, 71, 0.06);
+  --shadow-md: 0 5px 20px rgba(15, 39, 71, 0.08);
+
+  /* Layout */
+  --sidebar-width: 260px;
+}
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--admin-bg);
+  color: var(--admin-text);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* =========================================================
+   MAIN WRAPPER
+========================================================= */
+
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.admin-sidebar {
+  width: var(--sidebar-width);
+  min-height: 100vh;
+
+  background: var(--admin-navy);
+
+  color: var(--admin-white);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  z-index: 1000;
+
+  transition: transform 0.3s ease;
+}
+
+/* =========================================================
+   ADMIN LOGO
+========================================================= */
+
+.admin-logo {
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 28px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-logo a {
+  font-size: 25px;
+  font-weight: 700;
+
+  color: var(--admin-white);
+
+  letter-spacing: -0.5px;
+}
+
+.admin-logo span {
+  color: var(--admin-red);
+}
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
+
+.admin-nav {
+  flex: 1;
+
+  padding: 20px 14px;
+
+  overflow-y: auto;
+}
+
+.nav-section-title {
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1.2px;
+
+  color: rgba(255, 255, 255, 0.42);
+
+  padding: 16px 14px 8px;
+}
+
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  min-height: 46px;
+
+  padding: 0 14px;
+
+  margin-bottom: 4px;
+
+  border-radius: 8px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition: all 0.2s ease;
+}
+
+.admin-nav-link i {
+  font-size: 17px;
+
+  width: 20px;
+
+  text-align: center;
+
+  flex-shrink: 0;
+}
+
+.admin-nav-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+
+  color: var(--admin-white);
+}
+
+.admin-nav-link.active {
+  background: var(--admin-red);
+
+  color: var(--admin-white);
+
+  box-shadow: 0 4px 12px rgba(214, 40, 40, 0.25);
+}
+
+.admin-nav-link.active:hover {
+  background: var(--admin-red-dark);
+}
+
+/* =========================================================
+   NAV BADGE
+========================================================= */
+
+.nav-badge {
+  margin-left: auto;
+
+  min-width: 20px;
+  height: 20px;
+
+  padding: 0 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background: var(--admin-red);
+
+  color: var(--admin-white);
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.admin-nav-link.active .nav-badge {
+  background: var(--admin-white);
+
+  color: var(--admin-red);
+}
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.admin-sidebar-bottom {
+  padding: 14px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logout-link:hover {
+  background: rgba(214, 40, 40, 0.15);
+
+  color: #ff8a8a;
+}
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.admin-main {
+  width: calc(100% - var(--sidebar-width));
+
+  margin-left: var(--sidebar-width);
+
+  min-height: 100vh;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.admin-topbar {
+  height: 78px;
+
+  background: var(--admin-white);
+
+  border-bottom: 1px solid var(--admin-border);
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 30px;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 900;
+}
+
+/* =========================================================
+   SIDEBAR TOGGLE
+========================================================= */
+
+.sidebar-toggle {
+  display: none;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--admin-navy);
+
+  font-size: 25px;
+
+  margin-right: 15px;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   TOPBAR PAGE TITLE
+========================================================= */
+
+.topbar-page-title {
+  flex: 1;
+}
+
+.topbar-page-title h1 {
+  font-size: 20px;
+
+  font-weight: 600;
+
+  color: var(--admin-navy);
+
+  margin-bottom: 2px;
+}
+
+.topbar-page-title p {
+  font-size: 11px;
+
+  color: var(--admin-text-light);
+
+  margin: 0;
+}
+
+/* =========================================================
+   TOPBAR ACTIONS
+========================================================= */
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+}
+
+/* =========================================================
+   NOTIFICATION BUTTON
+========================================================= */
+
+.topbar-icon-btn {
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid var(--admin-border);
+
+  border-radius: 50%;
+
+  background: var(--admin-white);
+
+  color: var(--admin-navy);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.topbar-icon-btn:hover {
+  color: var(--admin-red);
+
+  border-color: var(--admin-red-light);
+
+  background: var(--admin-red-light);
+}
+
+.topbar-icon-btn i {
+  font-size: 17px;
+}
+
+/* Notification Dot */
+
+.notification-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--admin-red);
+
+  position: absolute;
+
+  top: 7px;
+  right: 7px;
+
+  border: 1px solid var(--admin-white);
+}
+
+/* =========================================================
+   ADMIN PROFILE
+========================================================= */
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+.admin-avatar {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  background: var(--admin-red-light);
+
+  color: var(--admin-red);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+}
+
+.admin-profile-info {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1.3;
+}
+
+.admin-profile-info strong {
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: var(--admin-navy);
+}
+
+.admin-profile-info span {
+  font-size: 10px;
+
+  color: var(--admin-text-light);
+}
+
+.profile-arrow {
+  font-size: 11px;
+
+  color: var(--admin-muted);
+}
+
+/* =========================================================
+   DASHBOARD CONTENT
+========================================================= */
+
+.admin-content {
+  padding: 30px;
+}
+
+/* =========================================================
+   WELCOME SECTION
+========================================================= */
+
+.dashboard-welcome {
+  margin-bottom: 28px;
+}
+
+.dashboard-welcome h2 {
+  font-size: 24px;
+
+  font-weight: 600;
+
+  color: var(--admin-navy);
+
+  margin-bottom: 6px;
+}
+
+.dashboard-welcome p {
+  font-size: 13px;
+
+  color: var(--admin-text-light);
+
+  margin: 0;
+}
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.dashboard-statistics {
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--admin-white);
+
+  border: 1px solid var(--admin-border);
+
+  border-radius: 12px;
+
+  min-height: 145px;
+
+  padding: 22px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-md);
+}
+
+.stat-card-content {
+  min-width: 0;
+}
+
+.stat-label {
+  display: block;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  color: var(--admin-text-light);
+
+  margin-bottom: 9px;
+}
+
+.stat-card h3 {
+  font-size: 23px;
+
+  font-weight: 600;
+
+  color: var(--admin-navy);
+
+  margin-bottom: 5px;
+}
+
+.stat-description {
+  font-size: 10px;
+
+  color: var(--admin-muted);
+
+  margin: 0;
+}
+
+.stat-icon {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--admin-red-light);
+
+  color: var(--admin-red);
+
+  flex-shrink: 0;
+}
+
+.stat-icon i {
+  font-size: 19px;
+}
+
+/* =========================================================
+   LOWER DASHBOARD SECTION
+========================================================= */
+
+.dashboard-lower-section {
+  margin-bottom: 24px;
+}
+
+/* =========================================================
+   DASHBOARD PANELS
+========================================================= */
+
+.dashboard-panel {
+  background: var(--admin-white);
+
+  border: 1px solid var(--admin-border);
+
+  border-radius: 12px;
+
+  padding: 22px;
+
+  box-shadow: var(--shadow-sm);
+
+  height: 100%;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+.panel-header h3 {
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: var(--admin-navy);
+
+  margin-bottom: 4px;
+}
+
+.panel-header p {
+  font-size: 11px;
+
+  color: var(--admin-text-light);
+
+  margin: 0;
+}
+
+.panel-link {
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: var(--admin-red);
+
+  white-space: nowrap;
+}
+
+.panel-link:hover {
+  color: var(--admin-red-dark);
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+  min-height: 230px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+.empty-state-icon {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: var(--admin-navy-light);
+
+  color: var(--admin-navy);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+}
+
+.empty-state-icon i {
+  font-size: 22px;
+}
+
+.empty-state h4 {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: var(--admin-navy);
+
+  margin-bottom: 7px;
+}
+
+.empty-state p {
+  max-width: 300px;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+
+  color: var(--admin-text-light);
+
+  margin: 0;
+}
+
+/* =========================================================
+   PENDING LIST
+========================================================= */
+
+.pending-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.pending-item {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 13px;
+
+  border: 1px solid var(--admin-border);
+
+  border-radius: 9px;
+
+  transition: background 0.2s ease;
+}
+
+.pending-item:hover {
+  background: var(--admin-bg);
+}
+
+.pending-item-icon {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 8px;
+
+  background: var(--admin-red-light);
+
+  color: var(--admin-red);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.pending-item-icon i {
+  font-size: 15px;
+}
+
+.pending-item strong {
+  display: block;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: var(--admin-navy);
+
+  margin-bottom: 3px;
+}
+
+.pending-item span {
+  display: block;
+
+  font-size: 10px;
+
+  color: var(--admin-text-light);
+}
+
+/* =========================================================
+   QUICK MANAGEMENT
+========================================================= */
+
+.quick-management-panel {
+  margin-bottom: 30px;
+}
+
+.quick-management-card {
+  min-height: 90px;
+
+  border: 1px solid var(--admin-border);
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  background: var(--admin-white);
+
+  color: var(--admin-navy);
+
+  transition: all 0.2s ease;
+}
+
+.quick-management-card i {
+  font-size: 20px;
+
+  color: var(--admin-red);
+}
+
+.quick-management-card span {
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+.quick-management-card:hover {
+  border-color: var(--admin-red);
+
+  background: var(--admin-red-light);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 991.98px) {
+  :root {
+    --sidebar-width: 240px;
+  }
+
+  .admin-content {
+    padding: 25px;
+  }
+
+  .admin-topbar {
+    padding: 0 25px;
+  }
+
+  .admin-profile-info,
+  .profile-arrow {
+    display: none;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 767.98px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .admin-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .admin-main {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .admin-topbar {
+    height: 70px;
+
+    padding: 0 17px;
+  }
+
+  .topbar-page-title h1 {
+    font-size: 17px;
+  }
+
+  .topbar-page-title p {
+    display: none;
+  }
+
+  .topbar-actions {
+    gap: 10px;
+  }
+
+  .admin-profile {
+    display: none;
+  }
+
+  .admin-content {
+    padding: 20px 15px;
+  }
+
+  .dashboard-welcome {
+    margin-bottom: 22px;
+  }
+
+  .dashboard-welcome h2 {
+    font-size: 20px;
+  }
+
+  .dashboard-welcome p {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .stat-card {
+    min-height: 125px;
+
+    padding: 18px;
+  }
+
+  .stat-card h3 {
+    font-size: 20px;
+  }
+
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dashboard-panel {
+    padding: 18px;
+  }
+
+  .panel-header h3 {
+    font-size: 14px;
+  }
+
+  .empty-state {
+    min-height: 190px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .admin-topbar {
+    padding: 0 13px;
+  }
+
+  .admin-content {
+    padding: 18px 12px;
+  }
+
+  .dashboard-welcome h2 {
+    font-size: 18px;
+  }
+
+  .stat-card {
+    min-height: 115px;
+
+    padding: 16px;
+  }
+
+  .stat-card h3 {
+    font-size: 18px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .stat-description {
+    font-size: 9px;
+  }
+
+  .stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .stat-icon i {
+    font-size: 16px;
+  }
+
+  .quick-management-card {
+    min-height: 80px;
+  }
+}

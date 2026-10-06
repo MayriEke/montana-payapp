@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MontanaPay | Admin Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Admin Dashboard CSS -->
+    <link rel="stylesheet" href="../CSS/admin-dashboard.css" />
+  </head>
+
+  <body>
+    <!-- =========================================================
+       ADMIN DASHBOARD WRAPPER
+  ========================================================== -->
+    <div class="admin-wrapper">
+      <!-- =========================================================
+         SIDEBAR
+    ========================================================== -->
+      <aside class="admin-sidebar" id="adminSidebar">
+        <!-- Logo -->
+        <div class="admin-logo">
+          <a href="dashboard.html"> Montana<span>Pay</span> </a>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <nav class="admin-nav">
+          <!-- Main -->
+          <div class="nav-section-title">MAIN</div>
+
+          <a href="dashboard.html" class="admin-nav-link active">
+            <i class="bi bi-grid-1x2-fill"></i>
+            <span>Dashboard</span>
+          </a>
+
+          <!-- User Management -->
+          <div class="nav-section-title">USER MANAGEMENT</div>
+
+          <a href="#" class="admin-nav-link">
+            <i class="bi bi-people-fill"></i>
+            <span>Customers</span>
+          </a>
+
+          <a href="#" class="admin-nav-link">
+            <i class="bi bi-person-badge-fill"></i>
+            <span>Agents</span>
+          </a>
+
+          <a href="#" class="admin-nav-link">
+            <i class="bi bi-person-check-fill"></i>
+            <span>Agent Applications</span>
+            <span class="nav-badge">0</span>
+          </a>
+
+          <!-- Financial Management -->
+          <div class="nav-section-title">FINANCIAL MANAGEMENT</div>
+
+          <a href="#" class="admin-nav-link">
+            <i class="bi bi-piggy-bank-fill"></i>
+            <span>Savings</span>
+          </a>
+
+          <a href="#" class="admin-nav-link">
+            <i class="bi bi-arrow-left-right"></i>
+            <span>Transactions</span>
+          </a>
+
+          <a href="#" class="admin-nav-link">
+            <i class="bi bi-wallet2"></i>
+            <span>Withdrawals</span>
+          </a>
+
+          <a href="#" class="admin-nav-link">
+            <i class="bi bi-cash-stack"></i>
+            <span>Contributions</span>
+          </a>
+
+          <a href="#" class="admin-nav-link">
+            <i class="bi bi-percent"></i>
+            <span>Commissions</span>
+          </a>
+
+          <!-- Monitoring -->
+          <div class="nav-section-title">MONITORING</div>
+
+          <a href="#" class="admin-nav-link">
+            <i class="bi bi-bar-chart-fill"></i>
+            <span>Reports</span>
+          </a>
+
+          <!-- System -->
+          <div class="nav-section-title">SYSTEM</div>
+
+          <a href="#" class="admin-nav-link">
+            <i class="bi bi-gear-fill"></i>
+            <span>Settings</span>
+          </a>
+        </nav>
+
+        <!-- Sidebar Bottom -->
+        <div class="admin-sidebar-bottom">
+          <a href="#" class="admin-nav-link logout-link">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
+      <main class="admin-main">
+        <!-- =======================================================
+           TOP BAR
+      ======================================================== -->
+        <header class="admin-topbar">
+          <!-- Mobile Sidebar Toggle -->
+          <button
+            type="button"
+            class="sidebar-toggle"
+            id="sidebarToggle"
+            aria-label="Toggle sidebar"
+          >
+            <i class="bi bi-list"></i>
+          </button>
+
+          <!-- Page Heading -->
+          <div class="topbar-page-title">
+            <h1>Dashboard</h1>
+            <p>Monitor and manage MontanaPay</p>
+          </div>
+
+          <!-- Topbar Right -->
+          <div class="topbar-actions">
+            <!-- Notifications -->
+            <button
+              type="button"
+              class="topbar-icon-btn"
+              aria-label="Notifications"
+            >
+              <i class="bi bi-bell"></i>
+              <span class="notification-dot"></span>
+            </button>
+
+            <!-- Admin Profile -->
+            <div class="admin-profile">
+              <div class="admin-avatar">
+                <i class="bi bi-person-fill"></i>
+              </div>
+
+              <div class="admin-profile-info">
+                <strong>Admin</strong>
+                <span>Administrator</span>
+              </div>
+
+              <i class="bi bi-chevron-down profile-arrow"></i>
+            </div>
+          </div>
+        </header>
+
+        <!-- =======================================================
+           DASHBOARD CONTENT
+      ======================================================== -->
+        <section class="admin-content">
+          <!-- Welcome -->
+          <div class="dashboard-welcome">
+            <div>
+              <h2>Welcome back, Admin</h2>
+
+              <p>Here's an overview of what's happening across MontanaPay.</p>
+            </div>
+          </div>
+
+          <!-- =====================================================
+             OVERVIEW CARDS
+        ====================================================== -->
+          <div class="row g-4 dashboard-statistics">
+            <!-- Total Customers -->
+            <div class="col-xl-3 col-md-6">
+              <div class="stat-card">
+                <div class="stat-card-content">
+                  <span class="stat-label"> Total Customers </span>
+
+                  <h3>0</h3>
+
+                  <p class="stat-description">Registered customers</p>
+                </div>
+
+                <div class="stat-icon">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Total Agents -->
+            <div class="col-xl-3 col-md-6">
+              <div class="stat-card">
+                <div class="stat-card-content">
+                  <span class="stat-label"> Total Agents </span>
+
+                  <h3>0</h3>
+
+                  <p class="stat-description">Approved agents</p>
+                </div>
+
+                <div class="stat-icon">
+                  <i class="bi bi-person-badge-fill"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Applications -->
+            <div class="col-xl-3 col-md-6">
+              <div class="stat-card">
+                <div class="stat-card-content">
+                  <span class="stat-label"> Pending Applications </span>
+
+                  <h3>0</h3>
+
+                  <p class="stat-description">Awaiting review</p>
+                </div>
+
+                <div class="stat-icon">
+                  <i class="bi bi-person-check-fill"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Total Savings -->
+            <div class="col-xl-3 col-md-6">
+              <div class="stat-card">
+                <div class="stat-card-content">
+                  <span class="stat-label"> Total Savings </span>
+
+                  <h3>₦0.00</h3>
+
+                  <p class="stat-description">Customer savings</p>
+                </div>
+
+                <div class="stat-icon">
+                  <i class="bi bi-piggy-bank-fill"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Total Transactions -->
+            <div class="col-xl-3 col-md-6">
+              <div class="stat-card">
+                <div class="stat-card-content">
+                  <span class="stat-label"> Total Transactions </span>
+
+                  <h3>0</h3>
+
+                  <p class="stat-description">Platform transactions</p>
+                </div>
+
+                <div class="stat-icon">
+                  <i class="bi bi-arrow-left-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Total Withdrawals -->
+            <div class="col-xl-3 col-md-6">
+              <div class="stat-card">
+                <div class="stat-card-content">
+                  <span class="stat-label"> Total Withdrawals </span>
+
+                  <h3>₦0.00</h3>
+
+                  <p class="stat-description">Customer withdrawals</p>
+                </div>
+
+                <div class="stat-icon">
+                  <i class="bi bi-wallet2"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Transactions -->
+            <div class="col-xl-3 col-md-6">
+              <div class="stat-card">
+                <div class="stat-card-content">
+                  <span class="stat-label"> Pending Transactions </span>
+
+                  <h3>0</h3>
+
+                  <p class="stat-description">Require attention</p>
+                </div>
+
+                <div class="stat-icon">
+                  <i class="bi bi-hourglass-split"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Platform Revenue -->
+            <div class="col-xl-3 col-md-6">
+              <div class="stat-card">
+                <div class="stat-card-content">
+                  <span class="stat-label"> Platform Revenue </span>
+
+                  <h3>₦0.00</h3>
+
+                  <p class="stat-description">Total platform revenue</p>
+                </div>
+
+                <div class="stat-icon">
+                  <i class="bi bi-graph-up-arrow"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =====================================================
+             LOWER DASHBOARD AREA
+        ====================================================== -->
+          <div class="row g-4 dashboard-lower-section">
+            <!-- Recent Transactions -->
+            <div class="col-lg-8">
+              <div class="dashboard-panel">
+                <div class="panel-header">
+                  <div>
+                    <h3>Recent Transactions</h3>
+
+                    <p>Latest activity on MontanaPay</p>
+                  </div>
+
+                  <a href="#" class="panel-link"> View All </a>
+                </div>
+
+                <div class="empty-state">
+                  <div class="empty-state-icon">
+                    <i class="bi bi-receipt"></i>
+                  </div>
+
+                  <h4>No transactions yet</h4>
+
+                  <p>
+                    Transactions will appear here when customers start using
+                    MontanaPay.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Actions -->
+            <div class="col-lg-4">
+              <div class="dashboard-panel">
+                <div class="panel-header">
+                  <div>
+                    <h3>Pending Actions</h3>
+
+                    <p>Items requiring attention</p>
+                  </div>
+                </div>
+
+                <div class="pending-list">
+                  <div class="pending-item">
+                    <div class="pending-item-icon">
+                      <i class="bi bi-person-check"></i>
+                    </div>
+
+                    <div>
+                      <strong>Agent Applications</strong>
+                      <span>0 pending applications</span>
+                    </div>
+                  </div>
+
+                  <div class="pending-item">
+                    <div class="pending-item-icon">
+                      <i class="bi bi-hourglass-split"></i>
+                    </div>
+
+                    <div>
+                      <strong>Transactions</strong>
+                      <span>0 pending transactions</span>
+                    </div>
+                  </div>
+
+                  <div class="pending-item">
+                    <div class="pending-item-icon">
+                      <i class="bi bi-wallet2"></i>
+                    </div>
+
+                    <div>
+                      <strong>Withdrawals</strong>
+                      <span>0 pending withdrawals</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =====================================================
+             QUICK MANAGEMENT
+        ====================================================== -->
+          <div class="dashboard-panel quick-management-panel">
+            <div class="panel-header">
+              <div>
+                <h3>Quick Management</h3>
+
+                <p>Access important administrative functions.</p>
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-3 col-sm-6">
+                <a href="#" class="quick-management-card">
+                  <i class="bi bi-people-fill"></i>
+
+                  <span>Manage Customers</span>
+                </a>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <a href="#" class="quick-management-card">
+                  <i class="bi bi-person-badge-fill"></i>
+
+                  <span>Manage Agents</span>
+                </a>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <a href="#" class="quick-management-card">
+                  <i class="bi bi-person-check-fill"></i>
+
+                  <span>Review Applications</span>
+                </a>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <a href="#" class="quick-management-card">
+                  <i class="bi bi-bar-chart-fill"></i>
+
+                  <span>View Reports</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- =========================================================
+       BOOTSTRAP JS
+  ========================================================== -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Notiflix -->
+    <script src="https://cdn.jsdelivr.net/npm/notiflix@3/dist/notiflix-aio-3.2.8.min.js"></script>
+
+    <!-- Admin Dashboard JS -->
+    <script src="../JS/admin-dashboard.js"></script>
+  </body>
+</html>
